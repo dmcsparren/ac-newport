@@ -10,11 +10,7 @@ export default defineConfig({
   },
   preview: {
     host: '0.0.0.0',
-    port: process.env.PORT ? parseInt(process.env.PORT) : 3000,
-    allowedHosts: [
-      'ac-newport-production.up.railway.app',
-      '.railway.app' // Allow all Railway subdomains
-    ]
+    strictPort: false
   },
   build: {
     outDir: 'dist'
