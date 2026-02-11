@@ -1,0 +1,152 @@
+.schedule {
+  background-color: var(--white);
+}
+
+.schedule h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.matches-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.match-card {
+  background-color: var(--white);
+  border: 2px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.match-card:hover {
+  border-color: var(--red-accent);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.15);
+}
+
+.match-card.home {
+  border-left: 4px solid var(--navy-blue);
+}
+
+.match-card.away {
+  border-left: 4px solid var(--silver);
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.match-competition {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+  text-transform: uppercase;
+}
+
+.match-location {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.match-location.home {
+  background-color: var(--navy-blue);
+  color: var(--white);
+}
+
+.match-location.away {
+  background-color: var(--silver);
+  color: var(--white);
+}
+
+.match-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.match-teams {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.team {
+  font-weight: 700;
+  color: var(--navy-blue);
+}
+
+.vs {
+  color: var(--silver);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.opponent {
+  font-weight: 600;
+  color: #555;
+}
+
+.match-info {
+  text-align: center;
+}
+
+.match-datetime {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.date {
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+.time {
+  color: var(--silver);
+  font-size: 0.95rem;
+}
+
+.match-cta {
+  width: 100%;
+  background-color: var(--red-accent);
+  color: var(--white);
+  padding: 0.75rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.match-cta:hover {
+  background-color: #a01629;
+}
+
+.schedule-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-full-schedule {
+  color: var(--red-accent);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .matches-container {
+    grid-template-columns: 1fr;
+  }
+}
