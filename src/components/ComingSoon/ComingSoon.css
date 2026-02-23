@@ -1,0 +1,21 @@
+.coming-soon-message {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.coming-soon-message h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #c0c0c0;
+}
+
+.coming-soon-message p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .coming-soon-message h3 {
+    font-size: 1.5rem;
+  }
+}

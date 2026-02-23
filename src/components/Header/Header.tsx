@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 const Header = () => {
@@ -11,10 +12,10 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo-section">
+        <Link to="/" className="logo-section">
           <img src="/logo.png" alt="AC Newport Logo" className="logo" />
           <span className="team-name">AC NEWPORT</span>
-        </div>
+        </Link>
 
         <button
           className="mobile-menu-toggle"
@@ -27,12 +28,11 @@ const Header = () => {
         </button>
 
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
-          <a href="#team" onClick={() => setIsMenuOpen(false)}>Team</a>
-          <a href="#schedule" onClick={() => setIsMenuOpen(false)}>Schedule</a>
-          <a href="#news" onClick={() => setIsMenuOpen(false)}>News</a>
-          <a href="#tickets" onClick={() => setIsMenuOpen(false)}>Tickets</a>
-          <a href="#community" onClick={() => setIsMenuOpen(false)}>Community</a>
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link to="/team" onClick={() => setIsMenuOpen(false)}>Team</Link>
+          <Link to="/schedule" onClick={() => setIsMenuOpen(false)}>Schedule</Link>
+          <Link to="/tickets" onClick={() => setIsMenuOpen(false)}>Tickets</Link>
+          <Link to="/community" onClick={() => setIsMenuOpen(false)}>Community</Link>
         </nav>
       </div>
     </header>

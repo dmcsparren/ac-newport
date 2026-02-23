@@ -1,16 +1,16 @@
-.schedule {
+.team-section {
   padding: 3rem 2rem;
   margin: 3rem 0;
   background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
   color: white;
 }
 
-.schedule-container {
+.team-container {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.schedule-container h2 {
+.team-container h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -18,12 +18,12 @@
 }
 
 @media (max-width: 768px) {
-  .schedule {
+  .team-section {
     padding: 2rem 1rem;
     margin: 2rem 0;
   }
 
-  .schedule-container h2 {
+  .team-container h2 {
     font-size: 2rem;
   }
 }

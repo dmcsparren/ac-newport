@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => {
@@ -15,30 +16,30 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#schedule">Schedule</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#tickets">Tickets</a></li>
+            <li><Link to="/team">Team</Link></li>
+            <li><Link to="/schedule">Schedule</Link></li>
+            <li><Link to="/tickets">Tickets</Link></li>
+            <li><Link to="/community">Community</Link></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h4>Community</h4>
           <ul>
-            <li><a href="#supporters">Supporters</a></li>
-            <li><a href="#youth">Youth Programs</a></li>
-            <li><a href="#partners">Partners</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link to="/community">Supporters</Link></li>
+            <li><Link to="/community">Youth Programs</Link></li>
+            <li><Link to="/community">Partners</Link></li>
+            <li><Link to="/community">Contact</Link></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h4>Follow Us</h4>
           <div className="social-links">
-            <a href="#twitter" aria-label="Twitter">Twitter</a>
-            <a href="https://instagram.com/ac_newport" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-            <a href="https://facebook.com/ac_newport" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-            <a href="#youtube" aria-label="YouTube">YouTube</a>
+            <a href="https://instagram.com/athletic_club_newport" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://tiktok.com/@athletic_club_newport" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+            <a href="https://facebook.com/acnewport" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+            <a href="https://youtube.com/@acnewport" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
           </div>
         </div>
       </div>

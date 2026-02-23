@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Hero.css'
 
 const Hero = () => {
@@ -6,13 +7,20 @@ const Hero = () => {
       <div className="hero-content">
         <h1 className="hero-title">Welcome to AC Newport</h1>
         <p className="hero-subtitle">Est. 2026 | Navigate Your Passion</p>
+        <p className="hero-motto">Amor Vincit Omnia - Love Conquers All</p>
         <p className="hero-description">
-          Join us as we embark on a historic journey. Be part of the founding community
-          of AC Newport's inaugural season.
+          At the heart of AC Newport lies a commitment to advancing soccer, engaging fans
+          and communities through the beautiful game. We aim to create pathways and
+          opportunities for an entire community to participate in high-quality football.
+        </p>
+        <p className="hero-description">
+          Located in Newport, Rhode Island—home of the Tennis Hall of Fame and the
+          Sailing Capital of the World—AC Newport brings professional soccer to one of
+          America's most iconic sporting destinations.
         </p>
         <div className="hero-cta">
-          <button className="cta-primary">Get Tickets</button>
-          <button className="cta-secondary">Become a Member</button>
+          <Link to="/tickets" className="cta-primary">Get Tickets</Link>
+          <Link to="/community" className="cta-secondary">Join Our Community</Link>
         </div>
       </div>
       <div className="hero-image">

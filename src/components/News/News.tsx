@@ -11,24 +11,24 @@ interface NewsArticle {
 const newsArticles: NewsArticle[] = [
   {
     id: 1,
-    title: 'AC Newport Announces Inaugural Season',
-    date: 'February 10, 2026',
-    excerpt: 'We are thrilled to announce the launch of AC Newport\'s first professional season. Join us on this historic journey.',
+    title: 'AC Newport Launched January 12, 2026',
+    date: 'January 12, 2026',
+    excerpt: 'AC Newport launched as a new initiative to elevate football in Newport and surrounding Aquidneck Island, bringing professional soccer to this renowned sporting hub.',
     category: 'Club News'
   },
   {
     id: 2,
-    title: 'Season Ticket Memberships Now Available',
-    date: 'February 8, 2026',
-    excerpt: 'Be part of history! Founding member season tickets are now on sale for our inaugural 2026 season.',
-    category: 'Tickets'
+    title: 'Meet the Leadership: Ziggy Korytoski, Sporting Director',
+    date: 'January 15, 2026',
+    excerpt: 'Jeffrey "Ziggy" Korytoski brings distinguished coaching experience, including leading ASC San Diego to two conference championships and NPSL National Semifinals.',
+    category: 'Team'
   },
   {
     id: 3,
-    title: 'Home Stadium Announced',
-    date: 'February 5, 2026',
-    excerpt: 'AC Newport will call Newport Stadium home. The venue will provide an intimate atmosphere for our supporters.',
-    category: 'Stadium'
+    title: 'Newport\'s Unique Soccer Identity',
+    date: 'January 20, 2026',
+    excerpt: 'AC Newport leverages Newport\'s unique status as home to the Tennis Hall of Fame and Sailing Capital of the World, creating an unmatched sporting experience.',
+    category: 'Community'
   }
 ]
 
