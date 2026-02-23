@@ -79,12 +79,13 @@ if (process.env.NODE_ENV === 'production') {
   const __filename = fileURLToPath(import.meta.url)
   const __dirname = path.dirname(__filename)
 
-  app.use(express.static(path.join(__dirname, '../dist')))
+  // Server is in dist/server/, so static files are in dist/ which is ../
+  app.use(express.static(path.join(__dirname, '..')))
 
   // Serve index.html for all non-API routes (SPA support)
   app.use((req, res, next) => {
     if (!req.path.startsWith('/api')) {
-      res.sendFile(path.join(__dirname, '../dist/index.html'))
+      res.sendFile(path.join(__dirname, '..', 'index.html'))
     } else {
       next()
     }
