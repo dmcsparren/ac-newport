@@ -1,6 +1,12 @@
 .hero {
   background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
   color: var(--white);
+  padding: 4rem 2rem;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -95,6 +101,10 @@
 
 @media (max-width: 1024px) {
   .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero-container {
     grid-template-columns: 1fr;
     min-height: auto;
     gap: 2rem;
