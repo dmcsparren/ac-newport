@@ -5,6 +5,11 @@
   color: white;
 }
 
+.schedule-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .schedule-container {
   max-width: 800px;
   margin: 0 auto;

@@ -9,13 +9,15 @@ const Home = () => {
       <Hero />
       <News />
       <section className="home-mailing-list">
-        <div className="mailing-list-container">
-          <h2>Stay Connected</h2>
-          <p className="mailing-list-intro">
-            Join our mailing list to receive the latest updates about AC Newport, including
-            match schedules, ticket information, and exclusive community events.
-          </p>
-          <MailingListForm id="home" />
+        <div className="mailing-list-wrapper">
+          <div className="mailing-list-container">
+            <h2>Stay Connected</h2>
+            <p className="mailing-list-intro">
+              Join our mailing list to receive the latest updates about AC Newport, including
+              match schedules, ticket information, and exclusive community events.
+            </p>
+            <MailingListForm id="home" />
+          </div>
         </div>
       </section>
     </div>

@@ -10,6 +10,11 @@
   color: white;
 }
 
+.mailing-list-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .mailing-list-container {
   max-width: 800px;
   margin: 0 auto;

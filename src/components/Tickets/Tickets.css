@@ -5,6 +5,11 @@
   color: white;
 }
 
+.tickets-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .tickets-container {
   max-width: 800px;
   margin: 0 auto;

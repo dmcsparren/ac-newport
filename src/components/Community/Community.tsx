@@ -5,10 +5,12 @@ import './Community.css'
 const Community = () => {
   return (
     <section className="community-section" id="community">
-      <div className="community-container">
-        <h2>Community</h2>
-        <ComingSoon />
-        <MailingListForm id="community" />
+      <div className="community-wrapper">
+        <div className="community-container">
+          <h2>Community</h2>
+          <ComingSoon />
+          <MailingListForm id="community" />
+        </div>
       </div>
     </section>
   )

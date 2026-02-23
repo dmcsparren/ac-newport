@@ -5,10 +5,12 @@ import './Team.css'
 const Team = () => {
   return (
     <section className="team-section" id="team">
-      <div className="team-container">
-        <h2>Our Team</h2>
-        <ComingSoon />
-        <MailingListForm id="team" />
+      <div className="team-wrapper">
+        <div className="team-container">
+          <h2>Our Team</h2>
+          <ComingSoon />
+          <MailingListForm id="team" />
+        </div>
       </div>
     </section>
   )

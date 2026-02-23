@@ -1,5 +1,17 @@
 .news {
   background-color: var(--light-gray);
+  padding: 4rem 2rem;
+}
+
+.news-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .news {
+    padding: 3rem 1rem;
+  }
 }
 
 .news-header {

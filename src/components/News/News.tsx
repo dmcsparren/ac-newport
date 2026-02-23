@@ -35,20 +35,22 @@ const newsArticles: NewsArticle[] = [
 const News = () => {
   return (
     <section className="news" id="news">
-      <div className="news-header">
-        <h2>Latest News</h2>
-        <a href="#all-news" className="view-all">View All News →</a>
-      </div>
-      <div className="news-grid">
-        {newsArticles.map((article) => (
-          <article key={article.id} className="news-card">
-            <span className="news-category">{article.category}</span>
-            <h3 className="news-title">{article.title}</h3>
-            <time className="news-date">{article.date}</time>
-            <p className="news-excerpt">{article.excerpt}</p>
-            <a href={`#news-${article.id}`} className="read-more">Read More →</a>
-          </article>
-        ))}
+      <div className="news-container">
+        <div className="news-header">
+          <h2>Latest News</h2>
+          <a href="#all-news" className="view-all">View All News →</a>
+        </div>
+        <div className="news-grid">
+          {newsArticles.map((article) => (
+            <article key={article.id} className="news-card">
+              <span className="news-category">{article.category}</span>
+              <h3 className="news-title">{article.title}</h3>
+              <time className="news-date">{article.date}</time>
+              <p className="news-excerpt">{article.excerpt}</p>
+              <a href={`#news-${article.id}`} className="read-more">Read More →</a>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )
