@@ -137,7 +137,3 @@ This is a professional team website. For feature requests or bug reports, please
 ## License
 
 © 2026 AC Newport. All rights reserved.
-
----
-
-**Navigate Your Passion** | Est. 2026

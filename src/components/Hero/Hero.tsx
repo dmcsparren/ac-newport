@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">Welcome to AC Newport</h1>
-          <p className="hero-subtitle">Est. 2026 | Navigate Your Passion</p>
+          <p className="hero-subtitle">Est. 2026</p>
           <p className="hero-motto">Amor Vincit Omnia - Love Conquers All</p>
           <p className="hero-description">
             At the heart of AC Newport lies a commitment to advancing soccer, engaging fans

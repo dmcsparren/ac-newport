@@ -10,7 +10,6 @@ const Footer = () => {
         <div className="footer-section">
           <h3>AC Newport</h3>
           <p>Established 2026</p>
-          <p className="tagline">Navigate Your Passion</p>
         </div>
 
         <div className="footer-section">
