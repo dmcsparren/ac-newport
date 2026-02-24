@@ -38,7 +38,6 @@ const Footer = () => {
             <a href="https://instagram.com/athletic_club_newport" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
             <a href="https://tiktok.com/@athletic_club_newport" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
             <a href="https://facebook.com/acnewport" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-            <a href="https://youtube.com/@acnewport" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
           </div>
         </div>
       </div>
