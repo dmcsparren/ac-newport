@@ -47,7 +47,6 @@ const News = () => {
               <h3 className="news-title">{article.title}</h3>
               <time className="news-date">{article.date}</time>
               <p className="news-excerpt">{article.excerpt}</p>
-              <a href={`#news-${article.id}`} className="read-more">Read More →</a>
             </article>
           ))}
         </div>
