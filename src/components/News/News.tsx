@@ -13,7 +13,7 @@ const newsArticles: NewsArticle[] = [
     id: 1,
     title: 'AC Newport Launched January 12, 2026',
     date: 'January 12, 2026',
-    excerpt: 'AC Newport launched as a new initiative to elevate football in Newport and surrounding Aquidneck Island, bringing professional soccer to this renowned sporting hub.',
+    excerpt: 'AC Newport launched as a new initiative to elevate football in Newport and surrounding Aquidneck Island, bringing high level soccer to this renowned sporting hub.',
     category: 'Club News'
   },
   {

@@ -16,7 +16,7 @@ const Hero = () => {
           </p>
           <p className="hero-description">
             Located in Newport, Rhode Island—home of the Tennis Hall of Fame and the
-            Sailing Capital of the World—AC Newport brings professional soccer to one of
+            Sailing Capital of the World—AC Newport brings high level soccer to one of
             America's most iconic sporting destinations.
           </p>
           <div className="hero-cta">
