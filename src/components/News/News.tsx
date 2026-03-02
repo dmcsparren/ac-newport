@@ -38,7 +38,7 @@ const News = () => {
       <div className="news-container">
         <div className="news-header">
           <h2>Latest News</h2>
-          <a href="#all-news" className="view-all">View All News →</a>
+          {/* <a href="#all-news" className="view-all">View All News →</a> */}
         </div>
         <div className="news-grid">
           {newsArticles.map((article) => (

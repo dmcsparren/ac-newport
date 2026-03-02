@@ -76,6 +76,80 @@ app.post('/api/subscribe', async (req, res) => {
   }
 })
 
+// Tryout registration endpoint
+app.post('/api/tryout-register', async (req, res) => {
+  try {
+    const {
+      firstName,
+      lastName,
+      dateOfBirth,
+      gender,
+      primaryPosition,
+      secondaryPosition,
+      dominantFoot,
+      email,
+      phone,
+      city,
+      state,
+      country,
+      experience
+    } = req.body
+
+    console.log('Received tryout registration:', { firstName, lastName, email })
+
+    // Validate required fields
+    if (!firstName || !lastName || !dateOfBirth || !gender || !primaryPosition || !email || !phone || !city || !state || !country || !experience) {
+      console.log('Validation failed: missing required fields')
+      return res.status(400).json({
+        error: 'All required fields must be filled out'
+      })
+    }
+
+    // Insert new registration
+    console.log('Inserting new tryout registration...')
+    const result = await pool.query(
+      `INSERT INTO tryout_registrations (
+        first_name, last_name, date_of_birth, gender, primary_position,
+        secondary_position, dominant_foot, email, phone, city, state,
+        country, experience, created_at
+      )
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, NOW())
+       RETURNING id, email, created_at`,
+      [
+        firstName,
+        lastName,
+        dateOfBirth,
+        gender,
+        primaryPosition,
+        secondaryPosition || null,
+        dominantFoot || null,
+        email,
+        phone,
+        city,
+        state,
+        country,
+        experience
+      ]
+    )
+
+    console.log('Successfully inserted tryout registration:', result.rows[0])
+
+    res.status(201).json({
+      message: 'Successfully registered for tryouts',
+      data: result.rows[0]
+    })
+  } catch (error) {
+    console.error('Error registering for tryouts:', error)
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined
+    })
+    res.status(500).json({
+      error: 'Failed to register. Please try again later.'
+    })
+  }
+})
+
 // Health check endpoint
 app.get('/api/health', async (req, res) => {
   try {

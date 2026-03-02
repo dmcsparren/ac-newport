@@ -1,5 +1,6 @@
 import Hero from '../components/Hero/Hero'
 import News from '../components/News/News'
+import TryoutBanner from '../components/TryoutBanner/TryoutBanner'
 import MailingListForm from '../components/MailingListForm/MailingListForm'
 import './Home.css'
 
@@ -8,6 +9,7 @@ const Home = () => {
     <div className="home-page">
       <Hero />
       <News />
+      <TryoutBanner />
       <section className="home-mailing-list">
         <div className="mailing-list-wrapper">
           <div className="mailing-list-container">
