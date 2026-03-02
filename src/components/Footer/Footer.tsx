@@ -25,9 +25,9 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Community</h4>
           <ul>
-            <li><Link to="/supporters">Supporters</Link></li>
+            {/* <li><Link to="/supporters">Supporters</Link></li>
             <li><Link to="/youth-programs">Youth Programs</Link></li>
-            <li><Link to="/partners">Partners</Link></li>
+            <li><Link to="/partners">Partners</Link></li> */}
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
