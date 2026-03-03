@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Follow Us</h4>
           <div className="social-links">
-            <a href="https://instagram.com/athletic_club_newport" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://instagram.com/ac_newport" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
             <a href="https://tiktok.com/@athletic_club_newport" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
             <a href="https://facebook.com/acnewport" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
           </div>
