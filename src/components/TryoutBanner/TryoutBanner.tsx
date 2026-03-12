@@ -9,7 +9,7 @@ const TryoutBanner = () => {
           <img src="/logo.png" alt="AC Newport Logo" />
         </div>
         <div className="banner-text-content">
-          <h3 className="banner-title">AC Newport - Tryouts - March 14th & 15th</h3>
+          <h3 className="banner-title">AC Newport - Tryouts - March 21st & 22nd</h3>
           <p className="banner-description">
             AC Newport will be hosting tryouts on Aquidneck Island in March, location to be determined. Please register here for more details.
           </p>
