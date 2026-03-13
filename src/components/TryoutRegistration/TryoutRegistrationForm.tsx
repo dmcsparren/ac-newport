@@ -1,5 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './TryoutRegistrationForm.css'
+
+// Declare Stripe custom element for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'stripe-buy-button': {
+        'buy-button-id': string
+        'publishable-key': string
+      }
+    }
+  }
+}
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -31,6 +43,18 @@ const TryoutRegistrationForm = () => {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  // Load Stripe script
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://js.stripe.com/v3/buy-button.js'
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -79,10 +103,6 @@ const TryoutRegistrationForm = () => {
         country: 'United States',
         experience: ''
       })
-
-      setTimeout(() => {
-        setSubmitted(false)
-      }, 5000)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to register. Please try again.')
     } finally {
@@ -312,17 +332,28 @@ const TryoutRegistrationForm = () => {
       </div>
 
       <div className="form-note">
-        <p>A $99 non-refundable registration fee applies once invited to tryouts.</p>
+        <p>A $99 non-refundable registration fee is required to complete your registration.</p>
       </div>
 
-      <button type="submit" className="submit-btn" disabled={submitted || isSubmitting}>
-        {isSubmitting ? 'Submitting...' : submitted ? 'Thank you!' : 'Register for Tryouts'}
-      </button>
+      {!submitted && (
+        <button type="submit" className="submit-btn" disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Continue to Payment'}
+        </button>
+      )}
 
       {submitted && (
-        <p className="success-message">
-          Thank you for registering! We'll be in touch soon with tryout details.
-        </p>
+        <div className="payment-section">
+          <p className="success-message">
+            ✓ Registration information saved! Please complete payment below to finalize your registration.
+          </p>
+          <div className="stripe-button-container">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1TAJgmCMkaBev4WY1HWi53PZ"
+              publishable-key="pk_live_51T81buCMkaBev4WYHnOJPw439IpxAysliKC1L3w93uO8LS8wX6UlvWLypPkxJDuqa2jEhsjekTGE7erIhyIAMV8t009QCQOxLO"
+            >
+            </stripe-buy-button>
+          </div>
+        </div>
       )}
 
       {error && (

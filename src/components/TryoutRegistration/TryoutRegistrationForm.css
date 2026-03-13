@@ -171,6 +171,33 @@
   }
 }
 
+/* Payment Section Styles */
+.payment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 2px solid #4ade80;
+  animation: fadeIn 0.5s ease;
+}
+
+.payment-section .success-message {
+  color: #16a34a;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.stripe-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
 @media (max-width: 768px) {
   .tryout-registration-form {
     padding: 1.5rem;
@@ -184,5 +211,9 @@
   .radio-group {
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .payment-section {
+    padding: 1.5rem;
   }
 }
