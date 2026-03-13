@@ -4,11 +4,20 @@ import dotenv from 'dotenv'
 import { Pool } from 'pg'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import Stripe from 'stripe'
 
 dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 3000
+
+// Initialize Stripe (only if key is present)
+let stripe: Stripe | null = null
+if (process.env.STRIPE_SECRET_KEY) {
+  stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: '2026-02-25.clover'
+  })
+}
 
 // Database connection
 const pool = new Pool({
@@ -16,7 +25,61 @@ const pool = new Pool({
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 })
 
-// Middleware
+// IMPORTANT: Stripe webhook MUST come before express.json() to get raw body
+app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), async (req, res) => {
+  if (!stripe) {
+    return res.status(400).json({ error: 'Stripe not configured' })
+  }
+
+  const sig = req.headers['stripe-signature']
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
+
+  if (!sig || !webhookSecret) {
+    console.error('Missing stripe signature or webhook secret')
+    return res.status(400).json({ error: 'Missing signature' })
+  }
+
+  try {
+    // Verify webhook signature
+    const event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret)
+
+    console.log('Received Stripe webhook:', event.type)
+
+    // Handle successful payment
+    if (event.type === 'checkout.session.completed') {
+      const session = event.data.object as Stripe.Checkout.Session
+      const customerEmail = session.customer_details?.email
+
+      if (customerEmail) {
+        console.log('Payment succeeded for:', customerEmail)
+
+        // Find registration by email and update payment status
+        const result = await pool.query(
+          `UPDATE tryout_registrations
+           SET payment_status = 'paid',
+               stripe_payment_id = $1,
+               paid_at = NOW()
+           WHERE email = $2 AND payment_status = 'pending'
+           RETURNING id, first_name, last_name, email`,
+          [session.id, customerEmail]
+        )
+
+        if (result.rows.length > 0) {
+          console.log('Updated registration payment status:', result.rows[0])
+        } else {
+          console.log('No pending registration found for email:', customerEmail)
+        }
+      }
+    }
+
+    res.json({ received: true })
+  } catch (err) {
+    console.error('Webhook error:', err instanceof Error ? err.message : err)
+    return res.status(400).json({ error: 'Webhook verification failed' })
+  }
+})
+
+// Middleware (after webhook route)
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
     ? true

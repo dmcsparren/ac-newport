@@ -1,0 +1,36 @@
+id,first_name,last_name,email,phone,source,created_at,updated_at
+2,Lou,Burns,louburns@cox.net,4016621747,community,2026-03-02 19:41:35.259141,2026-03-02 19:41:35.259141
+3,Leo,Orth,lo212257@gmail.com,5043524870,schedule,2026-03-02 22:45:16.726354,2026-03-02 22:45:16.726354
+4,Ira,Shaughnessy,irashaughnessy@gmail.com,4152608917,community,2026-03-02 23:48:43.034195,2026-03-02 23:48:43.034195
+5,Thomas,Loughborough,Thomasloughborough@gmail.com,9173709988,community,2026-03-03 01:45:50.227523,2026-03-03 01:45:50.227523
+6,Riley,Crozier,rcrozier5@gmail.com,4016368237,tickets,2026-03-03 01:50:11.795412,2026-03-03 01:50:11.795412
+7,Wassim ,Hayani,wassimhayani1@icloud.com,+212700118418,contact,2026-03-03 02:20:33.549667,2026-03-03 02:20:33.549667
+8,Declan,Karney ,declankarney06@outlook.com,4433463262,home,2026-03-03 02:21:47.376063,2026-03-03 02:21:47.376063
+9,Whit,Rugg,wcrugg16@gmail.com,4014744879,team,2026-03-03 03:09:31.843091,2026-03-03 03:09:31.843091
+10,Christopher ,McNally ,chrisjmcnally@yahoo.com,4016621375,community,2026-03-03 10:32:26.231138,2026-03-03 10:32:26.231138
+11,Cris,Offenberg,offenbergcristina@gmail.com,4012586626,home,2026-03-03 12:01:53.589474,2026-03-03 12:01:53.589474
+12,Heather,Ruhsam,heather.ruhsam@gmail.com,3234819050,schedule,2026-03-03 19:36:53.529333,2026-03-03 19:36:53.529333
+13,Maynor ,Zelaya ,maynorzelaya007@gmail.com,203-819-9796,contact,2026-03-03 21:10:50.568118,2026-03-03 21:10:50.568118
+14,Jim,Fowler,jim.fowler@salve.edu,6074273519,team,2026-03-04 01:36:58.644036,2026-03-04 01:36:58.644036
+15,Shaun ,Rodriguez,shaun.rodriguez@gmail.com,9788531751,home,2026-03-04 17:37:05.71484,2026-03-04 17:37:05.71484
+16,Andrew,Wheelan,a.wheelan8@gmail.com,4015000865,community,2026-03-04 18:41:23.100271,2026-03-04 18:41:23.100271
+17,Jaxson,Kahawai,jkahawai@students.stonehill.edu,808-542-7381,contact,2026-03-04 18:47:20.560793,2026-03-04 18:47:20.560793
+18,Trevor,Davidson,trevordavidson38@gmail.com,4018089427,community,2026-03-04 20:07:23.230809,2026-03-04 20:07:23.230809
+19,Mark,MacKenzie,markmackenz@gmail.com,7746445881,tickets,2026-03-04 20:11:39.060664,2026-03-04 20:11:39.060664
+20,Sean,Wheelan,Swheelan1@gmail.com,4019659384,community,2026-03-04 22:06:19.743045,2026-03-04 22:06:19.743045
+21,Ryan,Heflin,ryanfheflin@gmail.com,,home,2026-03-05 13:03:47.07599,2026-03-05 13:03:47.07599
+22,Noah,Santos,nrsantos713@gmail.com,4012691941,team,2026-03-05 20:54:35.049141,2026-03-05 20:54:35.049141
+23,R,Chase,rickchace@gmail.com,,community,2026-03-06 03:19:48.558422,2026-03-06 03:19:48.558422
+24,Tyler,Hatch,tylerhatch99@yahoo.com,5082741481,schedule,2026-03-06 12:53:14.94994,2026-03-06 12:53:14.94994
+25,Joseph,Kelly,joekelly2023@gmail.com,4018710051,team,2026-03-06 14:38:35.510431,2026-03-06 14:38:35.510431
+26,Tanner,Michelson,tanner.tcm@gmail.com,4015296298,community,2026-03-06 16:07:32.344723,2026-03-06 16:07:32.344723
+27,Steven,Sitrin,stevensitrin@icloud.com,4012229717,community,2026-03-07 00:13:16.314522,2026-03-07 00:13:16.314522
+28,Noah,Tellier,noahtellier@gmail.com,4018718788,tickets,2026-03-07 22:43:09.493532,2026-03-07 22:43:09.493532
+29,Torai,Matsumoto,toraimatsumoto20050815@gmail.com,6413518245,community,2026-03-08 01:40:38.907079,2026-03-08 01:40:38.907079
+30,stephen,fairweather,fairweather3@gmail.com,7743576799,home,2026-03-08 14:03:00.52558,2026-03-08 14:03:00.52558
+31,Keith,OMarra,keith@crucafenewport.com,(401) 330-6782,home,2026-03-08 18:25:11.525412,2026-03-08 18:25:11.525412
+32,Michael,Pieroni,michaelpieroni67@gmail.com,857-204-4252,schedule,2026-03-10 21:02:46.83963,2026-03-10 21:02:46.83963
+33,Cynthia L,Dutra,cindyldutra@yahoo.com,4015850110,home,2026-03-10 22:13:25.255922,2026-03-10 22:13:25.255922
+34,Ronald,Augustus,ronaugustus57@gmail.com,4014997893,schedule,2026-03-11 00:00:05.64065,2026-03-11 00:00:05.64065
+35,Janella,Mackinnon,janmac105@yahoo.com,4012414176,tickets,2026-03-11 00:43:38.168458,2026-03-11 00:43:38.168458
+36,Erik,Reiz,ereis@newportri.gov,4018455806,community,2026-03-11 13:42:27.704682,2026-03-11 13:42:27.704682
