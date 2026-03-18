@@ -16,20 +16,30 @@ const TryoutsPage = () => {
       <section className="tryouts-content">
         <div className="content-wrapper">
           <div className="tryouts-info">
-            <h2>What to Expect</h2>
+            <h2>Tryout Details</h2>
             <div className="info-grid">
               <div className="info-card">
-                <h3>Commitment</h3>
+                <h3>Dates & Times</h3>
                 <p>
-                  We're looking for dedicated players who are ready to compete at a high level
-                  and contribute to our team culture.
+                  March 21 & 22, 2026<br />
+                  9:00 am - 12:00 pm
                 </p>
               </div>
               <div className="info-card">
-                <h3>Competition</h3>
+                <h3>Location</h3>
                 <p>
-                  Our teams compete in competitive leagues, providing opportunities for growth
-                  and development throughout the season.
+                  Saint George's School<br />
+                  372 Purgatory Rd<br />
+                  Middletown, RI 02842
+                </p>
+              </div>
+              <div className="info-card">
+                <h3>What to Bring</h3>
+                <p>
+                  Black Shorts<br />
+                  White Socks<br />
+                  Shinguards<br />
+                  Water
                 </p>
               </div>
               <div className="info-card">
