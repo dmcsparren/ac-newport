@@ -1,0 +1,71 @@
+id,first_name,last_name,date_of_birth,gender,primary_position,secondary_position,dominant_foot,email,phone,city,state,country,experience,created_at,updated_at,payment_status,stripe_payment_id,paid_at,payment_amount
+2,William,Trees,2005-07-08,Male,Center Back,Left Back,Left,willtrees16@gmail.com,5164975813,Farmingdale,New York,United States,"I've plaued NCAA division 2 soccer for 3 seasons between The College of Staten Island (2023-2024)where I was a consistent starter as a freshman and sophomore, and Pace University(2025-current) where I helped lead our inaugural season as a program, competing in the best conference in the country. I played youth soccer for BW Gottschee USDA (2018-2020) and Massapequa Soccer Club 03/04 USYS(2021-2023). At Gottschee, I gained competitive and technical experience playing against professional academies and the best yourh players in the country. While at Massapequa, I played in older age groups, allowing me to develop physically. Additionally, I played for SUSA last summer in LISFL, a local college soccer summer league, where I captained the team to its first ever championship. Aside from playing, I am currently in the process of finishing my US Soccer D-license as I aspire to become a coach when my playing career comes to an end.",2026-03-03 01:40:10.253641,2026-03-03 01:40:10.253641,pending,,,9900
+3,Kamerin,Foberg,2004-09-14,Male,Center Back,Outside Back ,Right,kamfoberg@gmail.com,4015597896,Westerly,Rhode Island,United States,"Throughout my career, I have competed at a high level across multiple elite platforms. My background includes:
+
+Development Academy Player (U12-U16)- With Bayside FC and IMG Academy 
+
+National Premier League (U-16 Pre-Academy) – IMG Academy, National Regional berth in Colorado (2020) and 1st place finish in the Florida South Division
+
+MLS NEXT (U17 & U19) – IMG Academy, playoff berths in both age groups
+
+USYS (U19) –  IMG Academy, Undefeated Florida South Division Champions, National berth, and Elite 64 qualification
+
+Spain – Competed at Spain’s top Amateur and Juvenile levels with ETURE
+
+NCAA Division II – Currently playing for University of Mount Olive, previously played for Lynn University including an NCAA National Tournament berth
+
+NPSL – Miami Dutch Lions FC, earning Conference XI Selection and Regional XI Nomination along with playoff berth 
+
+UPSL (Premier Division)- Passaic FC, including playoff berth",2026-03-03 05:51:15.615794,2026-03-03 05:51:15.615794,pending,,,9900
+4,Maynof,Zelaya,2001-02-23,Male,Right back ,CM,Left,maynorzelaya007@gmail.com,203-819-9796,Bridgeport ,Connecticut,United States,U23 USL Two and APSL League and UPSL división 1,2026-03-03 21:10:24.555999,2026-03-03 21:10:24.555999,pending,,,9900
+5,Kieran ,Fowler ,2007-07-07,Male,Goalkeeper ,Striker,Right,Kieran.fowler7707@gmail.com,4014843191,WAKEFIELD,Rhode Island,United States,"14 years experience, 11 in goal, 3 in d3 high-school, and 2 in Surf Central",2026-03-04 01:44:12.02324,2026-03-04 01:44:12.02324,pending,,,9900
+6,Andrew,Wheelan,2006-02-17,Male,Goalkeeper,,Both,a.wheelan8@gmail.com,4015000865,Narragansett,Rhode Island,United States,"I’m currently a player at Rhode island College. I played for Bayside MLSnext throughout highschool, as well as a PG year at Mount Saint Charles Academy where I won an individual award and is a nationally ranked team.",2026-03-04 18:35:33.291132,2026-03-04 18:35:33.291132,pending,,,9900
+7,Tanner,Michelson,2006-11-17,Male,Midfielder,Defender,Right,tanner.tcm@gmail.com,4015296298,Newport,Rhode Island,United States,"I am currently a first year playing soccer at Babson College, one of the top division 3 programs in the country. I graduated from St. George's High School where I was a four year starter and played club soccer with Bayside FC out of Providence, Rhode Island. ",2026-03-06 16:09:46.222018,2026-03-06 16:09:46.222018,pending,,,9900
+8,Weldon,Arner,2006-07-25,Male,LB,LCB,Left,weldon0725@icloud.com,4014298762,Middletown,Rhode Island,United States,Current member of the Hobart Men’s Soccer team. Past 4 year varsity member of the St. George’s team,2026-03-06 17:38:02.915129,2026-03-06 17:38:02.915129,pending,,,9900
+9,Sean,Lanzillo,2000-04-25,Male,Right Back/ Left Back Fullback ,RW,Both,stlanzillo@comcast.net,7742665208,Mansfield,Massachusetts,United States,"2018-2019 D2 Merrimack 
+2021 Greater Lowell Rough Diamonds (NPSL) 1 Goal
+2020-2023 D3 Western New England University 
+- 2 yr capt
+- 2x 3rd team All- CCC
+- NEISL All Star
+- Regular season & Tournament Champion
+2025 South Shields International Academy 
+5 Games, 1 A, 400 min 
+Highlights on YouTube searching my name ",2026-03-06 22:45:08.495182,2026-03-06 22:45:08.495182,pending,,,9900
+10,Andres,Soto Burgos,2001-05-30,Male,gk,,Right,andressotoburgos.gk.01@gmail.com,3475918809,Bronx,New York,United States,"4 seasons in USL2 | Albany Rush (2), Pathfinder FC, Delaware Ospreys 
+4 Collegiate seasons at Castleton University | 2x MVP, 2x DPOTY, 2x Captain",2026-03-09 01:57:55.261405,2026-03-09 01:57:55.261405,pending,,,9900
+11,Kamerin,Foberg,2004-09-14,Male,Centerback,Outside back,Right,Kamfoberg@gmail.com,401-559-7896,Westerly,Rhode Island,United States,"Development Academy Player (U12-U16)- IMG Academy 
+National Premier League (U-16 Pre-Academy) – IMG Academy, National Regional berth in Colorado (2020) and 1st place finish in the Florida South Division
+MLS NEXT (U17 & U19) – IMG Academy, playoff berths in both age groups
+USYS (U19) –  IMG Academy, Undefeated Florida South Division Champions, National berth, and Elite 64 qualification
+Spain – Competed at Spain’s top Amateur and Juvenile levels with ETURE
+NCAA Division II – Currently playing for University of Mount Olive, previously played for Lynn University including an NCAA National Tournament berth
+NPSL – Miami Dutch Lions FC, earning Conference XI Selection and Regional XI Nomination along with playoff berth 
+UPSL (Premier Division)- Passaic FC, including playoff berth
+
+",2026-03-09 02:39:57.034873,2026-03-09 02:39:57.034873,pending,,,9900
+12,Labomoussaabdoulwab@gmail.com,Labo moussa,2001-12-03,Male,Center back ,Right back ,Right,labomoussaabdoulwab@gmail.com,3477289637,Bronx,New York,US,4 years semi pro ,2026-03-09 03:36:52.67872,2026-03-09 03:36:52.67872,pending,,,9900
+13,Gersi,Dura,2005-10-13,Male,Midfielder ,,Both,gersidura21@gmail.com,7742251581,Worcester,Massachusetts,United States,Previously played for hartford athletic. Currently play at inter new hampshire. Trialist for Portland Hearts of Pine last year. ,2026-03-11 04:34:31.423265,2026-03-11 04:34:31.423265,pending,,,9900
+14,Andrew,Lacouture,2001-08-11,Male,Goalkeeper,,Right,drewlac26@gmail.com,4013685643,Newport,Rhode Island,United States,"I was the starting goalkeeper for Newport FC in the 2025 season, conceding only 4 goals in 11 starts. ",2026-03-11 11:37:29.92471,2026-03-11 11:37:29.92471,pending,,,9900
+15,Chris,Wong,1999-10-14,Male,Midfielder,Defender,Right,christopher1336@gmail.com,9292453186,Cranston,Rhode Island,United States,"Played varsity soccer and swim team but eventually switched to a full-time swimming for scholarship purposes. I grew up in Hong Kong so soccer has been a part of my life even though it did not materialize as my ""main"" sport. I was the gold medalist in all ISSFHK Championships and HKIS 2014-2017 for backstroke 100m and 50m event. I went to college as part of a D2 swim team and eventually joined the sailing club but continued to play club soccer and won several intramural and club cups that was stalled however, due to COVID. 
+
+After COVID i moved to RI and in 2022. I currently still play in several men's league amateur league and lifted the Wide World Indoor Sports league A trophy in 2023 winter season. 
+
+Most recent achievement is actually winning the 7 a side corporate cup at the RIFC stadium. that happened in Fall of 2025.
+
+I mentioned my swim career because i have the same work ethic, fitness, and mentality that I bring to every soccer game. I look forward to try outs and hope to critical contributions to the team in every game. ",2026-03-11 15:43:12.914213,2026-03-11 15:43:12.914213,pending,,,9900
+16,Clay,Tyler,2006-05-19,Male,Striker,10/wing,Right,claytyler2006@gmail.com,5085949882,Attleboro,Massachusetts,United States,"Dean College co/28 msoc
+Fall River Marksmen UPSL
+NEFC
+SURF u23",2026-03-12 23:20:32.268639,2026-03-12 23:20:32.268639,pending,,,9900
+17,Manuel,Louro,1990-08-04,Male,"Midfield, ",Striker,Right,manuellouro731@gmail.com,+1 (774) 327-4840,Brockton,Massachusetts,United States,Ive played 7 years in npsl for rhode island red and boston city ive played ups for about 3 years for fall river marksman and I've played in Florida usl psl for marlex fc ,2026-03-12 23:21:15.742736,2026-03-12 23:21:15.742736,pending,,,9900
+18,Quintluio ,galvao ,1995-08-04,Male,defender,Medfieldee,Right,matchomatcho753@gmail.com,7745811249,brickton,Massachusetts,United States,I played in my country for over 8 years and I've already played here for 2 years on Maskmen.,2026-03-13 00:21:32.946034,2026-03-13 00:21:32.946034,pending,,,9900
+19,octaviano ,alves,1983-03-08,Male,fowart,left wing ,Right,cvunitva@yahoo.com,7743600799,brockton ,Massachusetts,United States,i play for manny teams and win many awards and i olay for semi professional and i have lot skilss and im fast player i believe i can achieve many more thank you ,2026-03-13 01:25:26.30522,2026-03-13 01:25:26.30522,pending,,,9900
+20,Anthony,Canuto,2004-03-18,Male,CDM,"Fullback, winger",Right,anthonycanuto004@gmail.com,5086311493,Fall River,Massachusetts,United States,"in my experience if played soccer at Brockton High school , South Shore united blazers won a state championship, played at university of massachusetts dartmouth ",2026-03-13 11:00:35.10679,2026-03-13 11:00:35.10679,pending,,,9900
+21,Joseph,Kelly,2005-02-06,Male,Midfielder,Winger,Both,joekelly2023@gmail.com,4018710051,Lincoln ,Rhode Island,United States,"Played two years at Bryant University, currently play for UPSL side Fall River FC and look to continue playing collegiate soccer.",2026-03-13 18:42:18.093793,2026-03-13 18:42:18.093793,pending,,,9900
+22,Franklim,Louro,1992-12-12,Male,Midfielder ,Left wing or right wing ,Right,duniamedina48@gmail.com,7743274312,Fall River ,Massachusetts,United States,"I’ve played for Brockton fc, Rhode Island reds, nd last couple years I’ve played for Fall River Marksman ",2026-03-14 15:28:25.212118,2026-03-14 15:28:25.212118,pending,,,9900
+23,Zachary,Rock,2002-05-15,Male,Goalkeeper,Central Defensive Midfield ,Right,zacharysrock7@gmail.com,3512010574,Newport,Rhode Island,United States,"I grew up in Massachusetts playing soccer as my only sport. I started playing club at age 10, rotating through various field positions until I was 14. At that point, I made the move to goalkeeper while playing for SF Vikings and joined Aztec Soccer Club shortly after.
+In high school, I played three years of varsity at Masconomet Regional after a year on JV. During that time, we played in two Division 2 North Finals, and I was named to the All-Conference team my senior year. I also continued playing with Aztec from my sophomore through senior year, competing in the NPSL.
+After graduating, I was recruited to play for Salve Regina University. My freshman year was the 2020 ""Covid year,"" so our schedule was limited. During my sophomore season, I began earning time on the field, but my year was cut short by a season-ending injury during practice. I took some time away from the team during my junior year to recover and figure out my next steps, but I quickly realized how much I missed the game. I returned for my senior season, where I shared time in net with a 3rd year goalkeeper through the end of the year.
+Currently, I’m living in Newport and coaching soccer at our local middleschool. Soccer is a major part of my life, and I’m looking to continue both playing and coaching at a competitive level for the foreseeable future.",2026-03-15 02:31:37.788681,2026-03-15 02:31:37.788681,pending,,,9900
+24,Zachary,Karousos,2004-02-20,Male,Midfielder,Fullback,Right,zkarousos@gmail.com,4018345474,Portsmouth,Rhode Island,United States,"Bruno United FC (2017-2021), Portsmouth High School Varsity (2018-22), Northeastern Men's Club Soccer (2022-23)",2026-03-16 17:38:19.68804,2026-03-16 17:38:19.68804,pending,,,9900

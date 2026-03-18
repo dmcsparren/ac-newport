@@ -72,6 +72,32 @@ app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), asyn
       }
     }
 
+    // Handle PaymentIntent (test page flow)
+    if (event.type === 'payment_intent.succeeded') {
+      const paymentIntent = event.data.object as Stripe.PaymentIntent
+      const registrationId = paymentIntent.metadata.registration_id
+
+      if (registrationId) {
+        console.log('PaymentIntent succeeded for registration:', registrationId)
+
+        const result = await pool.query(
+          `UPDATE tryout_registrations
+           SET payment_status = 'paid',
+               stripe_payment_id = $1,
+               paid_at = NOW()
+           WHERE id = $2 AND payment_status = 'pending'
+           RETURNING id, first_name, last_name, email`,
+          [paymentIntent.id, registrationId]
+        )
+
+        if (result.rows.length > 0) {
+          console.log('Updated registration payment status:', result.rows[0])
+        } else {
+          console.log('No pending registration found for ID:', registrationId)
+        }
+      }
+    }
+
     res.json({ received: true })
   } catch (err) {
     console.error('Webhook error:', err instanceof Error ? err.message : err)
@@ -83,7 +109,7 @@ app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), asyn
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
     ? true
-    : ['http://localhost:5173', 'http://localhost:3000'],
+    : ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:3001'],
   credentials: true
 }))
 app.use(express.json())
@@ -214,6 +240,63 @@ app.post('/api/tryout-register', async (req, res) => {
     })
     res.status(500).json({
       error: 'Failed to register. Please try again later.'
+    })
+  }
+})
+
+// Create PaymentIntent for tryout payment
+app.post('/api/create-payment-intent', async (req, res) => {
+  if (!stripe) {
+    return res.status(400).json({ error: 'Stripe not configured' })
+  }
+
+  try {
+    const { registrationId } = req.body
+
+    if (!registrationId) {
+      return res.status(400).json({ error: 'Registration ID required' })
+    }
+
+    // Get registration details
+    const result = await pool.query(
+      `SELECT id, first_name, last_name, email, payment_status
+       FROM tryout_registrations
+       WHERE id = $1`,
+      [registrationId]
+    )
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Registration not found' })
+    }
+
+    const registration = result.rows[0]
+
+    if (registration.payment_status === 'paid') {
+      return res.status(400).json({ error: 'Already paid' })
+    }
+
+    // Create PaymentIntent
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: 9900, // $99.00
+      currency: 'usd',
+      metadata: {
+        registration_id: registrationId.toString(),
+        player_name: `${registration.first_name} ${registration.last_name}`,
+        email: registration.email
+      },
+      description: `AC Newport Tryout Registration - ${registration.first_name} ${registration.last_name}`
+    })
+
+    console.log('Created PaymentIntent:', paymentIntent.id)
+
+    res.json({
+      clientSecret: paymentIntent.client_secret,
+      paymentIntentId: paymentIntent.id
+    })
+  } catch (error) {
+    console.error('Error creating PaymentIntent:', error)
+    res.status(500).json({
+      error: 'Failed to create payment intent. Please try again.'
     })
   }
 })

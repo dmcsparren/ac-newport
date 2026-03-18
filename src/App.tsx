@@ -13,6 +13,8 @@ import YouthProgramsPage from './pages/YouthProgramsPage'
 import PartnersPage from './pages/PartnersPage'
 import ContactPage from './pages/ContactPage'
 import TryoutsPage from './pages/TryoutsPage'
+import TryoutsTestPage from './pages/TryoutsTestPage'
+import PaymentSuccessPage from './pages/PaymentSuccessPage'
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             <Route path="/partners" element={<PartnersPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/tryouts" element={<TryoutsPage />} />
+            <Route path="/tryouts-test" element={<TryoutsTestPage />} />
+            <Route path="/payment-success" element={<PaymentSuccessPage />} />
           </Routes>
         </main>
         <Footer />
