@@ -84,7 +84,7 @@ export const games: Game[] = [
     homeTeam: "New York Shockers",
     awayTeam: "AC Newport",
     venue: "Afrim's Sports Park",
-    location: "Windsor, CT",
+    location: "Colonie, NY 12205",
     isHome: false,
     month: "june"
   },
