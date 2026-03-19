@@ -19,27 +19,14 @@ const TryoutsPage = () => {
             <h2>Tryout Details</h2>
             <div className="info-grid">
               <div className="info-card">
-                <h3>Dates & Times</h3>
+                <h3>When & Where</h3>
                 <p>
-                  March 21 & 22, 2026<br />
-                  9:00 am - 12:00 pm
-                </p>
-              </div>
-              <div className="info-card">
-                <h3>Location</h3>
-                <p>
+                  <strong>March 21 & 22, 2026</strong><br />
+                  9:00 am - 12:00 pm<br />
+                  <br />
                   Saint George's School<br />
                   372 Purgatory Rd<br />
                   Middletown, RI 02842
-                </p>
-              </div>
-              <div className="info-card">
-                <h3>What to Bring</h3>
-                <p>
-                  Black Shorts<br />
-                  White Socks<br />
-                  Shinguards<br />
-                  Water
                 </p>
               </div>
               <div className="info-card">
@@ -59,6 +46,11 @@ const TryoutsPage = () => {
               and contact you with tryout details.
             </p>
             <TryoutRegistrationForm />
+          </div>
+
+          <div className="what-to-bring">
+            <h3>What to Bring</h3>
+            <p>Black Shorts • White Socks • Shinguards • Water</p>
           </div>
         </div>
       </section>

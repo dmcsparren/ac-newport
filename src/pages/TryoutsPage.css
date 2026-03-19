@@ -102,6 +102,27 @@
   line-height: 1.6;
 }
 
+.what-to-bring {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  border: 2px solid #e0e0e0;
+}
+
+.what-to-bring h3 {
+  font-size: 1.3rem;
+  color: var(--navy-blue);
+  margin-bottom: 0.5rem;
+}
+
+.what-to-bring p {
+  font-size: 1rem;
+  color: #2d3e5f;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .tryouts-hero {
     padding: 4rem 1.5rem 3rem;
@@ -139,5 +160,18 @@
 
   .registration-intro {
     font-size: 1rem;
+  }
+
+  .what-to-bring {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .what-to-bring h3 {
+    font-size: 1.2rem;
+  }
+
+  .what-to-bring p {
+    font-size: 0.95rem;
   }
 }

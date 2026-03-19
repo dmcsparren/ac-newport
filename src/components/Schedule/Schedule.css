@@ -1,34 +1,461 @@
 .schedule {
-  padding: 3rem 2rem;
-  margin: 3rem 0;
-  background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
-  color: white;
+  min-height: 100vh;
+  background: #f4f6f9;
 }
 
-.schedule-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.schedule-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.schedule-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+/* ══════════ HERO SECTION ══════════ */
+.schedule-hero {
+  background: linear-gradient(135deg, var(--navy-blue) 0%, #253659 60%, var(--navy-blue) 100%);
+  color: #fff;
   text-align: center;
-  color: white;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
 }
 
+.schedule-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 30px,
+    rgba(255,255,255,.02) 30px,
+    rgba(255,255,255,.02) 60px
+  );
+}
+
+.schedule-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--red-accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.schedule-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.schedule-hero .hero-subtitle {
+  font-size: 1.1rem;
+  color: #ffffff !important;
+  text-align: center;
+  margin-bottom: 28px;
+  opacity: 1 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+}
+
+.legend {
+  display: inline-flex;
+  gap: 24px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 0.82rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-home {
+  background: #2ecc71;
+}
+
+.dot-away {
+  background: #e67e22;
+}
+
+/* ══════════ FILTER BAR ══════════ */
+.filter-bar {
+  background: #fff;
+  border-bottom: 1px solid #e0e6f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 20px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 70px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid #d0d8e8;
+  color: var(--navy-blue);
+  padding: 7px 20px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--navy-blue);
+  border-color: var(--navy-blue);
+  color: #fff;
+}
+
+/* ══════════ MAIN CONTENT ══════════ */
+.schedule-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* ══════════ MONTH GROUPS ══════════ */
+.month-group {
+  margin-bottom: 48px;
+}
+
+.month-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.month-label {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--navy-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.month-divider {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, rgba(0,31,63,0.15), transparent);
+  border-radius: 2px;
+}
+
+.month-count {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #6b7e9f;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ══════════ GAME CARDS ══════════ */
+.games-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.game-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(26,42,74,0.08);
+  border: 1px solid #e4eaf4;
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26,42,74,0.13);
+}
+
+.game-card.featured-home {
+  border-left: 4px solid #2ecc71;
+}
+
+.game-card.featured-away {
+  border-left: 4px solid #e67e22;
+}
+
+.game-inner {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  gap: 0;
+}
+
+/* Date Column */
+.game-date-col {
+  background: var(--navy-blue);
+  color: #fff;
+  text-align: center;
+  padding: 20px 12px;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.game-date-col .month-day {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.game-date-col .day-name {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  margin-top: 3px;
+}
+
+.game-date-col .game-time {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--red-accent);
+  margin-top: 5px;
+}
+
+.game-card.featured-home .game-date-col,
+.game-card.featured-away .game-date-col {
+  background: #15213a;
+}
+
+/* Main Info */
+.game-info {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.matchup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+  flex-wrap: wrap;
+}
+
+.team-home,
+.team-away {
+  color: var(--navy-blue);
+}
+
+.team-acnewport {
+  color: var(--red-accent) !important;
+}
+
+.vs-divider {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #6b7e9f;
+  background: #f0f4fa;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.venue-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #6b7e9f;
+}
+
+.venue-row svg {
+  flex-shrink: 0;
+}
+
+/* Badge Column */
+.game-badge-col {
+  padding: 16px 20px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.badge-home {
+  background: #e8f9f0;
+  color: #1a9950;
+  border: 1px solid #b8ebd0;
+}
+
+.badge-away {
+  background: #fff3e8;
+  color: #c05a00;
+  border: 1px solid #ffd5a8;
+}
+
+.badge-acnewport {
+  background: #fdecea;
+  color: var(--red-accent);
+  border: 1px solid #f5c0bb;
+}
+
+/* ══════════ CTA SECTION ══════════ */
+.cta-section {
+  background: var(--navy-blue);
+  border-radius: 14px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-section h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.cta-section p {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  max-width: 500px;
+}
+
+.btn-red {
+  background: var(--red-accent);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-red:hover {
+  background: #a01629;
+  transform: translateY(-2px);
+}
+
+/* ══════════ RESPONSIVE ══════════ */
 @media (max-width: 768px) {
-  .schedule {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
+  .schedule-hero {
+    padding: 4rem 1.5rem 3rem;
   }
 
-  .schedule-container h2 {
+  .schedule-hero h1 {
     font-size: 2rem;
+  }
+
+  .schedule-hero .hero-subtitle {
+    font-size: 1rem;
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  .filter-bar {
+    top: 60px;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .schedule-content {
+    padding: 30px 16px 50px;
+  }
+
+  .month-label {
+    font-size: 1.2rem;
+  }
+
+  .game-inner {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .game-badge-col {
+    display: none;
+  }
+
+  .matchup {
+    font-size: 0.92rem;
+  }
+
+  .game-date-col {
+    padding: 16px 10px;
+    min-height: 80px;
+  }
+
+  .game-date-col .month-day {
+    font-size: 1.3rem;
+  }
+
+  .game-info {
+    padding: 14px 16px;
+  }
+
+  .cta-section {
+    padding: 24px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-section p {
+    max-width: 100%;
+  }
+
+  .btn-red {
+    width: 100%;
   }
 }

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>AC Newport - NPSL Soccer Tryouts</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Open Sans', Arial, sans-serif;
+    background: #0d1a2e;
+  }
+
+  .flyer {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    background: linear-gradient(170deg, #0d1a2e 0%, #162742 40%, #1a3050 70%, #0d1a2e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .flyer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(255,255,255,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(255,255,255,0.02) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .field-line {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .field-line-1 { width: 600px; height: 600px; bottom: -200px; right: -150px; }
+  .field-line-2 { width: 400px; height: 400px; top: -100px; left: -100px; }
+
+  .top-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, #c0c8d4, #e8ecf0, #c0c8d4, transparent);
+    z-index: 2;
+  }
+
+  .logo-section {
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
+  }
+
+  .headline {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 72px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+
+  .sub-headline {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: #8fa4bf;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    margin-top: 4px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .divider {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c0c8d4, transparent);
+    margin: 24px auto 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 30px;
+    padding: 8px 28px;
+    margin-top: 22px;
+    position: relative;
+    z-index: 2;
+  }
+  .badge-text {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #c0c8d4;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+  .details {
+    width: 880px;
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .detail-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .detail-label {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #8fa4bf;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+  }
+
+  .detail-value {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1.35;
+  }
+
+  .detail-value-sm {
+    font-size: 17px;
+    font-weight: 400;
+    color: #c8d4e2;
+  }
+
+  .fee-section {
+    margin-top: 36px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .fee-amount {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #ffffff;
+  }
+
+  .fee-label {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #8fa4bf;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 2px;
+  }
+
+  .cta-section {
+    margin-top: 32px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffffff, #e0e6ed);
+    color: #0d1a2e;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding: 16px 56px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3), 0 0 40px rgba(255,255,255,0.05);
+    transition: transform 0.2s;
+  }
+
+  .cta-button:hover { transform: translateY(-2px); }
+
+  .cta-url {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 15px;
+    color: #8fa4bf;
+    margin-top: 10px;
+    letter-spacing: 1px;
+  }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, #c0c8d4, #e8ecf0, #c0c8d4, transparent);
+  }
+
+  .note {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 13px;
+    color: #6a7d94;
+    text-align: center;
+    margin-top: 16px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.5px;
+  }
+
+  .icon-svg {
+    fill: none;
+    stroke: #8fa4bf;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+</style>
+</head>
+<body>
+<div class="flyer">
+  <div class="field-line field-line-1"></div>
+  <div class="field-line field-line-2"></div>
+  <div class="top-bar"></div>
+
+  <!-- Logo -->
+  <div class="logo-section">
+    <div class="logo-container">
+      <img src="logo.png" alt="AC Newport Logo">
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="headline">OPEN TRYOUTS</div>
+  <div class="sub-headline">NPSL Soccer</div>
+  <div class="divider"></div>
+
+  <div class="badge">
+    <span class="badge-text">Men 18+</span>
+  </div>
+
+  <!-- Details -->
+  <div class="details">
+    <div class="detail-item">
+      <svg class="detail-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="6" width="28" height="26" rx="3" class="icon-svg"/>
+        <line x1="4" y1="14" x2="32" y2="14" class="icon-svg"/>
+        <line x1="12" y1="4" x2="12" y2="8" class="icon-svg"/>
+        <line x1="24" y1="4" x2="24" y2="8" class="icon-svg"/>
+      </svg>
+      <div>
+        <div class="detail-label">Dates & Times</div>
+        <div class="detail-value">March 21 & 22, 2026</div>
+        <div class="detail-value-sm">9:00 AM - 12:00 PM</div>
+      </div>
+    </div>
+
+    <div class="detail-item">
+      <svg class="detail-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 4C12.5 4 8 8.5 8 14c0 8 10 18 10 18s10-10 10-18c0-5.5-4.5-10-10-10z" class="icon-svg"/>
+        <circle cx="18" cy="14" r="4" class="icon-svg"/>
+      </svg>
+      <div>
+        <div class="detail-label">Location</div>
+        <div class="detail-value">Saint George's School</div>
+        <div class="detail-value-sm">372 Purgatory Rd, Middletown, RI 02842</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fee -->
+  <div class="fee-section">
+    <div class="fee-amount">$99</div>
+    <div class="fee-label">Non-Refundable Registration Fee</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a href="https://www.acnewport.com/tryouts" class="cta-button" target="_blank">Register Now</a>
+    <div class="cta-url">www.acnewport.com/tryouts</div>
+  </div>
+
+  <div class="note">Players must be eligible to play in the NPSL</div>
+
+  <div class="bottom-bar"></div>
+</div>
+</body>
+</html>
