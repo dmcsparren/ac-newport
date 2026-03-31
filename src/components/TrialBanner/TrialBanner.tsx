@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom'
-import './TryoutBanner.css'
+import './TrialBanner.css'
 
-const TryoutBanner = () => {
+const TrialBanner = () => {
   return (
-    <Link to="/tryouts" className="tryout-banner">
-      <div className="tryout-banner-content">
+    <Link to="/trials" className="trial-banner">
+      <div className="trial-banner-content">
         <div className="banner-logo">
           <img src="/logo.png" alt="AC Newport Logo" />
         </div>
         <div className="banner-text-content">
-          <h3 className="banner-title">AC Newport - Tryouts - March 21 & 22</h3>
+          <h3 className="banner-title">AC Newport - Player Trials</h3>
           <p className="banner-description">
-            9:00 am - 12:00 pm at Saint George's School, Middletown, RI
+            Register now for your opportunity to trial with AC Newport
           </p>
         </div>
       </div>
@@ -19,4 +19,4 @@ const TryoutBanner = () => {
   )
 }
 
-export default TryoutBanner
+export default TrialBanner

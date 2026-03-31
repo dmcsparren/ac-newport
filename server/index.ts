@@ -170,6 +170,72 @@ app.post('/api/subscribe', async (req, res) => {
   }
 })
 
+// Trial registration endpoint
+app.post('/api/trial-register', async (req, res) => {
+  try {
+    const {
+      firstName,
+      lastName,
+      dateOfBirth,
+      gender,
+      primaryPosition,
+      secondaryPosition,
+      dominantFoot,
+      email,
+      phone,
+      city,
+      state,
+      country,
+      experience
+    } = req.body
+
+    console.log('Received trial registration:', { firstName, lastName, email })
+
+    if (!firstName || !lastName || !dateOfBirth || !gender || !primaryPosition || !email || !phone || !city || !state || !country || !experience) {
+      return res.status(400).json({
+        error: 'All required fields must be filled out'
+      })
+    }
+
+    const result = await pool.query(
+      `INSERT INTO tryout_registrations (
+        first_name, last_name, date_of_birth, gender, primary_position,
+        secondary_position, dominant_foot, email, phone, city, state,
+        country, experience, created_at
+      )
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, NOW())
+       RETURNING id, email, created_at`,
+      [
+        firstName, lastName, dateOfBirth, gender, primaryPosition,
+        secondaryPosition || null, dominantFoot || null, email, phone,
+        city, state, country, experience
+      ]
+    )
+
+    console.log('Successfully inserted trial registration:', result.rows[0])
+
+    syncToGoogleSheet({
+      type: 'tryout_registration',
+      firstName, lastName, dateOfBirth, gender, primaryPosition,
+      secondaryPosition: secondaryPosition || '',
+      dominantFoot: dominantFoot || '',
+      email, phone, city, state, country, experience,
+      paymentStatus: 'pending',
+      createdAt: result.rows[0].created_at
+    })
+
+    res.status(201).json({
+      message: 'Successfully registered for trials',
+      data: result.rows[0]
+    })
+  } catch (error) {
+    console.error('Error registering for trials:', error)
+    res.status(500).json({
+      error: 'Failed to register. Please try again later.'
+    })
+  }
+})
+
 // Tryout registration endpoint
 app.post('/api/tryout-register', async (req, res) => {
   try {
@@ -284,7 +350,7 @@ app.post('/api/create-payment-intent', async (req, res) => {
         player_name: `${registration.first_name} ${registration.last_name}`,
         email: registration.email
       },
-      description: `AC Newport Tryout Registration - ${registration.first_name} ${registration.last_name}`
+      description: `AC Newport Trial Registration - ${registration.first_name} ${registration.last_name}`
     })
 
     console.log('Created PaymentIntent:', paymentIntent.id)

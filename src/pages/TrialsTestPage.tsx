@@ -7,7 +7,7 @@ import './TryoutsPage.css'
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '')
 
-const TryoutsTestPage = () => {
+const TrialsTestPage = () => {
   const [clientSecret, setClientSecret] = useState<string | null>(null)
   const [registrationId, setRegistrationId] = useState<number | null>(null)
 
@@ -20,7 +20,7 @@ const TryoutsTestPage = () => {
     <div className="tryouts-page">
       <section className="tryouts-hero">
         <div className="tryouts-hero-content">
-          <h1>Register for Tryouts (TEST)</h1>
+          <h1>Player Registration (TEST)</h1>
           <p className="hero-subtitle">
             Test page for integrated payment flow
           </p>
@@ -67,4 +67,4 @@ const TryoutsTestPage = () => {
   )
 }
 
-export default TryoutsTestPage
+export default TrialsTestPage
