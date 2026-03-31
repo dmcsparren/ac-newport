@@ -14,6 +14,8 @@ import PartnersPage from './pages/PartnersPage'
 import ContactPage from './pages/ContactPage'
 import TryoutsPage from './pages/TryoutsPage'
 import TryoutsTestPage from './pages/TryoutsTestPage'
+import TrialsPage from './pages/TrialsPage'
+import TrialsTestPage from './pages/TrialsTestPage'
 import PaymentSuccessPage from './pages/PaymentSuccessPage'
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/tryouts" element={<TryoutsPage />} />
             <Route path="/tryouts-test" element={<TryoutsTestPage />} />
+            <Route path="/trials" element={<TrialsPage />} />
+            <Route path="/trials-test" element={<TrialsTestPage />} />
             <Route path="/payment-success" element={<PaymentSuccessPage />} />
           </Routes>
         </main>

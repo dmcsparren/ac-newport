@@ -27,15 +27,14 @@ const PaymentSuccessPage = () => {
         <div className="success-icon">✓</div>
         <h1>Payment Successful!</h1>
         <p className="success-message">
-          Thank you for completing your tryout registration payment. You're all set!
+          Thank you for completing your registration payment. You're all set!
         </p>
 
         <div className="next-steps">
           <h2>What's Next?</h2>
           <ul>
             <li>Check your email for payment confirmation</li>
-            <li>We'll contact you with tryout details soon</li>
-            <li>Bring your gear and be ready to play!</li>
+            <li>Our coaching staff will reach out with your formal trial invitation</li>
           </ul>
         </div>
 

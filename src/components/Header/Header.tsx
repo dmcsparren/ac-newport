@@ -32,6 +32,7 @@ const Header = () => {
           <Link to="/team" onClick={() => setIsMenuOpen(false)}>Team</Link>
           <Link to="/schedule" onClick={() => setIsMenuOpen(false)}>Schedule</Link>
           <Link to="/tickets" onClick={() => setIsMenuOpen(false)}>Tickets</Link>
+          <Link to="/trials" onClick={() => setIsMenuOpen(false)}>Trial Registration</Link>
           <Link to="/community" onClick={() => setIsMenuOpen(false)}>Community</Link>
         </nav>
       </div>

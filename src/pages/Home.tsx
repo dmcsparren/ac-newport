@@ -1,6 +1,6 @@
 import Hero from '../components/Hero/Hero'
 import News from '../components/News/News'
-import TryoutBanner from '../components/TryoutBanner/TryoutBanner'
+import TrialBanner from '../components/TrialBanner/TrialBanner'
 import MailingListForm from '../components/MailingListForm/MailingListForm'
 import './Home.css'
 
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <Hero />
-      <TryoutBanner />
+      <TrialBanner />
       <News />
       <section className="home-mailing-list">
         <div className="mailing-list-wrapper">
