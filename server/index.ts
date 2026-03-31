@@ -5,6 +5,7 @@ import { Pool } from 'pg'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import Stripe from 'stripe'
+import { syncToGoogleSheet } from './google-sheets-sync.js'
 
 dotenv.config()
 
@@ -66,6 +67,13 @@ app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), asyn
 
         if (result.rows.length > 0) {
           console.log('Updated registration payment status:', result.rows[0])
+
+          syncToGoogleSheet({
+            type: 'payment_update',
+            email: result.rows[0].email,
+            paymentStatus: 'paid',
+            stripePaymentId: session.id
+          })
         } else {
           console.log('No pending registration found for email:', customerEmail)
         }
@@ -92,6 +100,13 @@ app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), asyn
 
         if (result.rows.length > 0) {
           console.log('Updated registration payment status:', result.rows[0])
+
+          syncToGoogleSheet({
+            type: 'payment_update',
+            email: result.rows[0].email,
+            paymentStatus: 'paid',
+            stripePaymentId: paymentIntent.id
+          })
         } else {
           console.log('No pending registration found for ID:', registrationId)
         }
@@ -216,6 +231,7 @@ app.post('/api/trial-register', async (req, res) => {
 
     syncToGoogleSheet({
       type: 'tryout_registration',
+      id: result.rows[0].id,
       firstName, lastName, dateOfBirth, gender, primaryPosition,
       secondaryPosition: secondaryPosition || '',
       dominantFoot: dominantFoot || '',
@@ -293,6 +309,17 @@ app.post('/api/tryout-register', async (req, res) => {
     )
 
     console.log('Successfully inserted tryout registration:', result.rows[0])
+
+    syncToGoogleSheet({
+      type: 'tryout_registration',
+      id: result.rows[0].id,
+      firstName, lastName, dateOfBirth, gender, primaryPosition,
+      secondaryPosition: secondaryPosition || '',
+      dominantFoot: dominantFoot || '',
+      email, phone, city, state, country, experience,
+      paymentStatus: 'pending',
+      createdAt: result.rows[0].created_at
+    })
 
     res.status(201).json({
       message: 'Successfully registered for tryouts',
