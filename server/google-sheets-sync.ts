@@ -2,6 +2,7 @@
 // Posts registration data to a Google Apps Script endpoint that appends rows to a Google Sheet
 
 const APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL
+const APPS_SCRIPT_SECRET = process.env.GOOGLE_APPS_SCRIPT_SECRET
 
 interface MailingListData {
   type: 'mailing_list'
@@ -29,6 +30,8 @@ interface TryoutRegistrationData {
   state: string
   country: string
   experience: string
+  instagramHandle?: string
+  imageAuthorization?: boolean
   paymentStatus: string
   paymentAmount?: number
   createdAt: string
@@ -54,7 +57,7 @@ export async function syncToGoogleSheet(data: SheetData): Promise<void> {
     const response = await fetch(APPS_SCRIPT_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify({ ...data, secret: APPS_SCRIPT_SECRET })
     })
 
     if (!response.ok) {

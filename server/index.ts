@@ -201,7 +201,9 @@ app.post('/api/trial-register', async (req, res) => {
       city,
       state,
       country,
-      experience
+      experience,
+      instagramHandle,
+      imageAuthorization
     } = req.body
 
     console.log('Received trial registration:', { firstName, lastName, email })
@@ -216,14 +218,15 @@ app.post('/api/trial-register', async (req, res) => {
       `INSERT INTO tryout_registrations (
         first_name, last_name, date_of_birth, gender, primary_position,
         secondary_position, dominant_foot, email, phone, city, state,
-        country, experience, created_at
+        country, experience, instagram_handle, image_authorization, created_at
       )
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, NOW())
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, NOW())
        RETURNING id, email, created_at`,
       [
         firstName, lastName, dateOfBirth, gender, primaryPosition,
         secondaryPosition || null, dominantFoot || null, email, phone,
-        city, state, country, experience
+        city, state, country, experience,
+        instagramHandle || null, imageAuthorization || false
       ]
     )
 
@@ -236,6 +239,8 @@ app.post('/api/trial-register', async (req, res) => {
       secondaryPosition: secondaryPosition || '',
       dominantFoot: dominantFoot || '',
       email, phone, city, state, country, experience,
+      instagramHandle: instagramHandle || '',
+      imageAuthorization: imageAuthorization || false,
       paymentStatus: 'pending',
       createdAt: result.rows[0].created_at
     })
@@ -268,7 +273,9 @@ app.post('/api/tryout-register', async (req, res) => {
       city,
       state,
       country,
-      experience
+      experience,
+      instagramHandle,
+      imageAuthorization
     } = req.body
 
     console.log('Received tryout registration:', { firstName, lastName, email })
@@ -287,9 +294,9 @@ app.post('/api/tryout-register', async (req, res) => {
       `INSERT INTO tryout_registrations (
         first_name, last_name, date_of_birth, gender, primary_position,
         secondary_position, dominant_foot, email, phone, city, state,
-        country, experience, created_at
+        country, experience, instagram_handle, image_authorization, created_at
       )
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, NOW())
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, NOW())
        RETURNING id, email, created_at`,
       [
         firstName,
@@ -304,7 +311,9 @@ app.post('/api/tryout-register', async (req, res) => {
         city,
         state,
         country,
-        experience
+        experience,
+        instagramHandle || null,
+        imageAuthorization || false
       ]
     )
 
@@ -317,6 +326,8 @@ app.post('/api/tryout-register', async (req, res) => {
       secondaryPosition: secondaryPosition || '',
       dominantFoot: dominantFoot || '',
       email, phone, city, state, country, experience,
+      instagramHandle: instagramHandle || '',
+      imageAuthorization: imageAuthorization || false,
       paymentStatus: 'pending',
       createdAt: result.rows[0].created_at
     })

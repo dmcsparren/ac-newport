@@ -30,7 +30,9 @@ const TryoutRegistrationTestForm = ({ onSuccess }: Props) => {
     city: '',
     state: '',
     country: 'United States',
-    experience: ''
+    experience: '',
+    instagramHandle: '',
+    imageAuthorization: false
   })
   const [error, setError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -38,9 +40,13 @@ const TryoutRegistrationTestForm = ({ onSuccess }: Props) => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
+    const target = e.target
+    const value = target instanceof HTMLInputElement && target.type === 'checkbox'
+      ? target.checked
+      : target.value
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [target.name]: value
     })
     setError(null)
   }
@@ -309,6 +315,34 @@ const TryoutRegistrationTestForm = ({ onSuccess }: Props) => {
             onChange={handleChange}
             required
           />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="instagramHandle">Instagram Handle</label>
+          <input
+            type="text"
+            id="instagramHandle"
+            name="instagramHandle"
+            value={formData.instagramHandle}
+            onChange={handleChange}
+            placeholder="@username"
+          />
+        </div>
+      </div>
+
+      <div className="form-section">
+        <h3>Authorizations</h3>
+        <div className="form-group checkbox-group">
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              name="imageAuthorization"
+              checked={formData.imageAuthorization}
+              onChange={handleChange}
+              required
+            />
+            <span>I authorize AC Newport to use my image, likeness, and photographs taken during tryouts, training, and matches for promotional purposes including social media, website, and marketing materials. *</span>
+          </label>
         </div>
       </div>
 
