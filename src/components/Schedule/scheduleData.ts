@@ -14,18 +14,18 @@ export interface Game {
 
 export const games: Game[] = [
   // MAY
-  {
-    id: "game-1",
-    date: "May 2",
-    dayName: "Saturday",
-    time: "6:00 PM",
-    homeTeam: "AC Newport",
-    awayTeam: "Osner's FC",
-    venue: "Portsmouth High School",
-    location: "Portsmouth, RI",
-    isHome: true,
-    month: "may"
-  },
+  // {
+  //   id: "game-1",
+  //   date: "May 2",
+  //   dayName: "Saturday",
+  //   time: "6:00 PM",
+  //   homeTeam: "AC Newport",
+  //   awayTeam: "Osner's FC",
+  //   venue: "Portsmouth High School",
+  //   location: "Portsmouth, RI",
+  //   isHome: true,
+  //   month: "may"
+  // },
   {
     id: "game-2",
     date: "May 16",
