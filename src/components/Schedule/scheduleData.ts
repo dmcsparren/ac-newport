@@ -105,7 +105,7 @@ export const games: Game[] = [
     location: "Bridgeport, CT",
     isHome: false,
     month: "june",
-    ticketUrl: "https://tickets.acnewport.com/event/ac-newport-vs-santa-cruz-fc-06-24-2026-1800?e=Gyo"
+    ticketUrl: "https://santacruzfc.ticketspice.com/santa-cruz-fc-npsl-2026-season"
   },
   {
     id: "game-8",
@@ -118,7 +118,7 @@ export const games: Game[] = [
     location: "Newport, RI",
     isHome: true,
     month: "june",
-    ticketUrl: "https://santacruzfc.ticketspice.com/santa-cruz-fc-npsl-2026-season"
+    ticketUrl: "https://tickets.acnewport.com/event/ac-newport-vs-santa-cruz-fc-06-24-2026-1800?e=Gyo"
   },
   {
     id: "game-9",
