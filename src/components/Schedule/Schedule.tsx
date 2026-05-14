@@ -149,7 +149,7 @@ const Schedule = () => {
             <h3>Get Your Tickets Now</h3>
             <p>Don't miss AC Newport's inaugural season at Toppa Field. All home matches are played in Newport, Rhode Island.</p>
           </div>
-          <a className="btn-red" href="/tickets">Buy Tickets</a>
+          <a className="btn-red" href="https://tickets.acnewport.com">Buy Tickets</a>
         </div>
       </div>
     </div>
@@ -200,7 +200,11 @@ const GameCard = ({ game }: GameCardProps) => {
           <span className={`badge ${game.isHome ? 'badge-home' : 'badge-away'}`}>
             {game.isHome ? 'Home' : 'Away'}
           </span>
-          <span className="badge badge-acnewport">AC Newport</span>
+          {game.isHome && (
+            <a href={game.ticketUrl} className="btn-buy-tickets btn-buy-home">
+              Buy Tickets
+            </a>
+          )}
         </div>
       </div>
     </div>
