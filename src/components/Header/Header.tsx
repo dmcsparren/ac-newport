@@ -31,7 +31,7 @@ const Header = () => {
           <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
           <Link to="/team" onClick={() => setIsMenuOpen(false)}>Team</Link>
           <Link to="/schedule" onClick={() => setIsMenuOpen(false)}>Schedule</Link>
-          <Link to="/tickets" onClick={() => setIsMenuOpen(false)}>Tickets</Link>
+          <a href="https://tickets.acnewport.com" onClick={() => setIsMenuOpen(false)}>Tickets</a>
           <Link to="/trials" onClick={() => setIsMenuOpen(false)}>Trial Registration</Link>
           <Link to="/community" onClick={() => setIsMenuOpen(false)}>Community</Link>
         </nav>

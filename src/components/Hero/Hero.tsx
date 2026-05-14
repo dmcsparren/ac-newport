@@ -20,7 +20,7 @@ const Hero = () => {
             America's most iconic sporting destinations.
           </p>
           <div className="hero-cta">
-            <Link to="/tickets" className="cta-primary">Get Tickets</Link>
+            <a href="https://tickets.acnewport.com" className="cta-primary">Get Tickets</a>
             <Link to="/community" className="cta-secondary">Join Our Community</Link>
           </div>
         </div>

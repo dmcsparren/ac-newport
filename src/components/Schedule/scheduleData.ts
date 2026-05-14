@@ -10,6 +10,7 @@ export interface Game {
   location: string
   isHome: boolean // true if AC Newport is home team
   month: string // "may", "june", "july"
+  ticketUrl: string // URL to purchase tickets for this game
 }
 
 export const games: Game[] = [
@@ -36,7 +37,8 @@ export const games: Game[] = [
     venue: "Stony Brook University",
     location: "Stony Brook, NY",
     isHome: false,
-    month: "may"
+    month: "may",
+    ticketUrl: "https://ascnewyork.com/product/ascny-vs-ac-newport/"
   },
   {
     id: "game-3",
@@ -48,7 +50,8 @@ export const games: Game[] = [
     venue: "Toppa Field",
     location: "Newport, RI",
     isHome: true,
-    month: "may"
+    month: "may",
+    ticketUrl: "https://tickets.acnewport.com/event/american-soccer-club-new-york-vs-ac-newport-05-23-2026-1800?e=Gyo"
   },
 
   // JUNE
@@ -62,7 +65,8 @@ export const games: Game[] = [
     venue: "Toppa Field",
     location: "Newport, RI",
     isHome: true,
-    month: "june"
+    month: "june",
+    ticketUrl: "https://tickets.acnewport.com/event/new-york-shockers-vs-ac-newport-06-06-2026-1800?e=Gyo"
   },
   {
     id: "game-5",
@@ -74,7 +78,8 @@ export const games: Game[] = [
     venue: "Toppa Field",
     location: "Newport, RI",
     isHome: true,
-    month: "june"
+    month: "june",
+    ticketUrl: "https://tickets.acnewport.com/event/new-haven-united-fc-vs-ac-newport-06-13-2026-1800?e=Gyo"
   },
   {
     id: "game-6",
@@ -86,7 +91,8 @@ export const games: Game[] = [
     venue: "Afrim's Sports Park",
     location: "Colonie, NY 12205",
     isHome: false,
-    month: "june"
+    month: "june",
+    ticketUrl: "https://app.gopassage.com/events/shockers-npsl-vs-ac-newport"
   },
   {
     id: "game-7",
@@ -98,7 +104,8 @@ export const games: Game[] = [
     venue: "Doucette Stadium",
     location: "Bridgeport, CT",
     isHome: false,
-    month: "june"
+    month: "june",
+    ticketUrl: "https://tickets.acnewport.com/event/ac-newport-vs-santa-cruz-fc-06-24-2026-1800?e=Gyo"
   },
   {
     id: "game-8",
@@ -110,7 +117,8 @@ export const games: Game[] = [
     venue: "Toppa Field",
     location: "Newport, RI",
     isHome: true,
-    month: "june"
+    month: "june",
+    ticketUrl: "https://santacruzfc.ticketspice.com/santa-cruz-fc-npsl-2026-season"
   },
   {
     id: "game-9",
@@ -122,7 +130,8 @@ export const games: Game[] = [
     venue: "Queens College",
     location: "Flushing, NY",
     isHome: false,
-    month: "june"
+    month: "june",
+    ticketUrl: "https://tickets.osnersfc.com/event/osners-fc-vs-ac-newport---npsl-home-game"
   },
 
   // JULY
@@ -136,7 +145,8 @@ export const games: Game[] = [
     venue: "Yale University",
     location: "New Haven, CT",
     isHome: false,
-    month: "july"
+    month: "july",
+    ticketUrl: "https://newhavenunitedfc.flicket.io/events/0f40b565-2721-4e4a-8697-14e724e7b12f/reservation"
   }
 ]
 

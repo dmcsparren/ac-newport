@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+import TicketBanner from './components/TicketBanner/TicketBanner'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
@@ -23,6 +24,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="app">
+        <TicketBanner />
         <Header />
         <main>
           <Routes>

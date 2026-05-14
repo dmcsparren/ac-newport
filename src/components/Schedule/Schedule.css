@@ -337,6 +337,41 @@
   border: 1px solid #f5c0bb;
 }
 
+.btn-buy-tickets {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+.btn-buy-home {
+  background: var(--red-accent);
+}
+
+.btn-buy-home:hover {
+  background: #a01020;
+}
+
+.btn-buy-away {
+  background: var(--navy-blue, #1a2a4a);
+}
+
+.btn-buy-away:hover {
+  background: #0f1d35;
+}
+
+.btn-buy-tickets:hover {
+  transform: translateY(-1px);
+}
+
 /* ══════════ CTA SECTION ══════════ */
 .cta-section {
   background: var(--navy-blue);
@@ -421,11 +456,16 @@
   }
 
   .game-inner {
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 90px 1fr auto;
+  }
+
+  .game-badge-col .badge {
+    display: none;
   }
 
   .game-badge-col {
-    display: none;
+    padding: 12px 12px 12px 0;
+    justify-content: center;
   }
 
   .matchup {

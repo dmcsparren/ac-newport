@@ -17,7 +17,7 @@ const Footer = () => {
           <ul>
             <li><Link to="/team">Team</Link></li>
             <li><Link to="/schedule">Schedule</Link></li>
-            <li><Link to="/tickets">Tickets</Link></li>
+            <li><a href="https://tickets.acnewport.com">Tickets</a></li>
             <li><Link to="/community">Community</Link></li>
           </ul>
         </div>
