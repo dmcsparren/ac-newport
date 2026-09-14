@@ -17,21 +17,24 @@ const Memberships = () => {
     <div className="memberships">
       {/* Hero */}
       <section className="mem-hero" id="top">
+        <div className="mem-hero-media" role="img" aria-label="AC Newport training at Saint George's School" />
+        <div className="mem-hero-scrim" />
         <div className="mem-hero-inner">
-          <p className="mem-eyebrow">Season Tickets &amp; Membership · MMXXVII</p>
-          <h1 className="mem-hero-title">
-            A Season on <em>Aquidneck Island</em>
+          <p className="eyebrow eyebrow--light">Season Tickets &amp; Membership — MMXXVII</p>
+          <h1 className="display-title display-title--light mem-hero-title">
+            A Season on
+            <em>Aquidneck Island</em>
           </h1>
           <p className="mem-hero-lede">
             Ten home occasions in the sailing capital of the world. Football,
             harbour, and hospitality — held to the standard Newport expects.
           </p>
           <div className="mem-hero-cta">
-            <a href="#tickets" className="mem-btn mem-btn-primary">
+            <a href="#tickets" className="btn btn-primary">
               Explore Season Tickets
             </a>
-            <a href="#membership" className="mem-btn mem-btn-ghost">
-              Founding Membership
+            <a href="#weekend" className="btn btn-ghost">
+              Plan the Weekend
             </a>
           </div>
         </div>
@@ -39,35 +42,24 @@ const Memberships = () => {
 
       {/* Intro / single-match context */}
       <section className="mem-intro">
-        <div className="mem-container mem-intro-grid">
-          <div className="mem-intro-copy">
-            <h2 className="mem-section-title">The case for the season</h2>
-            <p>
-              Newport keeps its own sporting company — the Hall of Fame, the
-              regattas, the clubs. AC Newport joins it with ten home occasions
-              staged across the island’s finest weeks.
-            </p>
-            <p>
-              Single admission runs {singleMatchPricing.adult} for adults and{' '}
-              {singleMatchPricing.youth} for youth. A Compass season ticket pays
-              for itself by the eighth match — everything after is the club’s
-              thanks for turning up.
-            </p>
-          </div>
-          <aside className="mem-intro-card" aria-label="Single match pricing">
-            <span className="mem-intro-card-label">Single Match</span>
-            <div className="mem-intro-prices">
-              <div>
-                <strong>{singleMatchPricing.adult}</strong>
-                <span>Adult</span>
-              </div>
-              <div>
-                <strong>{singleMatchPricing.youth}</strong>
-                <span>Youth · 12 &amp; under</span>
-              </div>
-            </div>
-            <p className="mem-intro-card-note">{singleMatchPricing.note}</p>
-          </aside>
+        <div className="mem-narrow">
+          <p className="eyebrow eyebrow--center">The Case for the Season</p>
+          <h2 className="display-title mem-intro-title">
+            Newport has always drawn the world for sport.
+            <em>Now it has a club.</em>
+          </h2>
+          <p className="lede mem-intro-lede">
+            Tennis has its Hall of Fame here. Sailing has its harbour. AC Newport
+            gives the island its football season — an international club on its own
+            journey through the American ranks, with a fixture list built for
+            residents and for the visitors who plan a weekend around it.
+          </p>
+          <div className="mem-rule" />
+          <p className="mem-intro-price">
+            Single match — {singleMatchPricing.adult} adult ·{' '}
+            {singleMatchPricing.youth} child (12 &amp; under). A full season pays
+            for itself in eight matches.
+          </p>
         </div>
       </section>
 
@@ -75,12 +67,10 @@ const Memberships = () => {
       <section className="mem-tiers" id="tickets">
         <div className="mem-container">
           <header className="mem-section-head">
-            <p className="mem-section-num">I</p>
-            <h2 className="mem-section-title">Season Tickets</h2>
-            <p className="mem-section-sub">
-              Four ways to hold your place for the full campaign — plus a fifth,
-              by invitation.
-            </p>
+            <p className="eyebrow">I. Season Tickets</p>
+            <h2 className="display-title mem-section-title">
+              Choose how you <em>hold your place.</em>
+            </h2>
           </header>
 
           <div className="mem-tier-grid">
@@ -113,8 +103,8 @@ const Memberships = () => {
 
                 <a
                   href={ticketsUrl}
-                  className={`mem-btn mem-tier-cta${
-                    tier.featured ? ' mem-btn-primary' : ' mem-btn-outline'
+                  className={`btn mem-tier-cta${
+                    tier.featured ? ' btn-primary' : ' btn-outline'
                   }`}
                 >
                   {tier.ctaLabel}
@@ -125,30 +115,32 @@ const Memberships = () => {
         </div>
       </section>
 
-      {/* The Newport Weekend */}
-      <section className="mem-weekend">
-        <div className="mem-container">
-          <header className="mem-section-head">
-            <p className="mem-section-num">II</p>
-            <h2 className="mem-section-title">The Newport Weekend</h2>
-            <p className="mem-section-sub">
-              Home matches run March through December on Saturday evenings — so a
-              fixture becomes a weekend.
+      {/* The Newport Weekend — split with photo */}
+      <section className="mem-weekend" id="weekend">
+        <div className="mem-weekend-grid">
+          <div className="mem-weekend-media" role="img" aria-label="A Newport matchday weekend" />
+          <div className="mem-weekend-content">
+            <p className="eyebrow eyebrow--light">II. The Newport Weekend</p>
+            <h2 className="display-title display-title--light mem-weekend-title">
+              More than ninety minutes.
+              <em>A destination season.</em>
+            </h2>
+            <p className="mem-weekend-lede">
+              Home matches run March through December on Saturday evenings across
+              the island's finest weeks — so a fixture becomes a weekend.
             </p>
-          </header>
-
-          <ol className="mem-weekend-steps">
-            {weekendSteps.map((step, i) => (
-              <li key={step.title} className="mem-weekend-step">
-                <span className="mem-weekend-index">{i + 1}</span>
-                <div>
+            <ol className="mem-weekend-steps">
+              {weekendSteps.map((step) => (
+                <li key={step.title} className="mem-weekend-step">
                   <span className="mem-weekend-time">{step.time}</span>
-                  <h3 className="mem-weekend-title">{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+                  <div>
+                    <h3 className="mem-weekend-step-title">{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 
@@ -156,11 +148,10 @@ const Memberships = () => {
       <section className="mem-groups">
         <div className="mem-container">
           <header className="mem-section-head">
-            <p className="mem-section-num">III</p>
-            <h2 className="mem-section-title">Groups &amp; Corporate</h2>
-            <p className="mem-section-sub">
-              Bring the club, the office, or the away end.
-            </p>
+            <p className="eyebrow">III. Groups &amp; Corporate</p>
+            <h2 className="display-title mem-section-title">
+              Bring the club, the office, <em>or the away end.</em>
+            </h2>
           </header>
 
           <div className="mem-group-grid">
@@ -174,7 +165,7 @@ const Memberships = () => {
           </div>
 
           <div className="mem-groups-cta">
-            <a href="/contact" className="mem-btn mem-btn-outline">
+            <a href="/contact" className="btn btn-outline">
               Enquire about groups
             </a>
           </div>
@@ -202,7 +193,7 @@ const Memberships = () => {
             aria-expanded={finePrintOpen}
             onClick={() => setFinePrintOpen((open) => !open)}
           >
-            <span className="mem-section-num">IV</span>
+            <span className="mem-fineprint-num">IV.</span>
             The Fine Print
             <span className="mem-fineprint-chevron" aria-hidden="true">
               {finePrintOpen ? '−' : '+'}
@@ -220,13 +211,17 @@ const Memberships = () => {
 
       {/* Closing CTA */}
       <section className="mem-closing">
-        <div className="mem-container mem-closing-inner">
-          <h2 className="mem-closing-title">Reserve your 2027</h2>
-          <p>
+        <div className="mem-closing-scrim" />
+        <div className="mem-closing-inner">
+          <p className="eyebrow eyebrow--center eyebrow--light">MMXXVII</p>
+          <h2 className="display-title display-title--light mem-closing-title">
+            Reserve your <em>season.</em>
+          </h2>
+          <p className="mem-closing-lede">
             Ten Saturday evenings on Aquidneck Island. Hold your place before the
             Founding hundred are gone.
           </p>
-          <a href={ticketsUrl} className="mem-btn mem-btn-primary">
+          <a href={ticketsUrl} className="btn btn-primary">
             Reserve now
           </a>
         </div>

@@ -5,37 +5,33 @@ import './Hero.css'
 const Hero = () => {
   return (
     <section className="hero" id="home">
-      <div className="hero-container">
-        <div className="hero-content">
-          <h1 className="hero-title">Welcome to AC Newport</h1>
-          <p className="hero-subtitle">Est. 2026</p>
-          <p className="hero-motto">Amor Vincit Omnia - Love Conquers All</p>
-          <p className="hero-description">
-            At the heart of AC Newport lies a commitment to advancing soccer, engaging fans
-            and communities through the beautiful game. We aim to create pathways and
-            opportunities for an entire community to participate in high-quality football.
-          </p>
-          <p className="hero-description">
-            Located in Newport, Rhode Island—home of the Tennis Hall of Fame and the
-            Sailing Capital of the World—AC Newport brings first-rate soccer to one of
-            America's most iconic sporting destinations.
-          </p>
-          <div className="hero-cta">
-            {features.memberships ? (
-              <>
-                <Link to="/memberships" className="cta-primary">2027 Season Memberships</Link>
-                <a href="https://tickets.acnewport.com" className="cta-secondary">Get Tickets</a>
-              </>
-            ) : (
-              <>
-                <a href="https://tickets.acnewport.com" className="cta-primary">Get Tickets</a>
-                <Link to="/community" className="cta-secondary">Join Our Community</Link>
-              </>
-            )}
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/logo.png" alt="AC Newport Compass Logo" />
+      <div className="hero-media" role="img" aria-label="AC Newport player on the ball at Saint George's School" />
+      <div className="hero-scrim" />
+      <div className="hero-inner">
+        <p className="eyebrow eyebrow--light">Newport · Rhode Island — Est. MMXXVI</p>
+        <h1 className="display-title display-title--light hero-title">
+          Newport has a
+          <em>football club.</em>
+        </h1>
+        <p className="hero-lede">
+          Aquidneck Island's own competitive club, bringing first-rate football to
+          the sailing capital of the world — <em>Amor Vincit Omnia.</em>
+        </p>
+        <div className="hero-cta">
+          {features.memberships && (
+            <Link to="/memberships" className="btn btn-primary">
+              2027 Season Memberships
+            </Link>
+          )}
+          <a
+            href="https://tickets.acnewport.com"
+            className={features.memberships ? 'btn btn-ghost' : 'btn btn-primary'}
+          >
+            Get Tickets
+          </a>
+          <Link to="/community" className="btn btn-ghost">
+            The Community
+          </Link>
         </div>
       </div>
     </section>
