@@ -1,0 +1,613 @@
+/* ============================================================
+   2027 Season Memberships — mobile-first
+   Uses established palette: --navy-blue, --red-accent,
+   --silver, --light-gray, --white
+   ============================================================ */
+
+.memberships {
+  color: var(--navy-blue);
+  background-color: var(--white);
+}
+
+.mem-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Shared buttons ---------- */
+.mem-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.9rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.mem-btn-primary {
+  background-color: var(--red-accent);
+  color: var(--white);
+  border-color: var(--red-accent);
+}
+.mem-btn-primary:hover {
+  background-color: #a01629;
+  border-color: #a01629;
+  color: var(--white);
+}
+
+.mem-btn-outline {
+  background-color: transparent;
+  color: var(--navy-blue);
+  border-color: var(--navy-blue);
+}
+.mem-btn-outline:hover {
+  background-color: var(--navy-blue);
+  color: var(--white);
+}
+
+.mem-btn-ghost {
+  background-color: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.mem-btn-ghost:hover {
+  background-color: var(--white);
+  color: var(--navy-blue);
+  border-color: var(--white);
+}
+
+/* ---------- Section scaffolding ---------- */
+.mem-section-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+}
+
+.mem-section-num {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--red-accent);
+  margin-bottom: 0.5rem;
+}
+
+.mem-section-title {
+  font-size: 2rem;
+  line-height: 1.15;
+  color: var(--navy-blue);
+  margin: 0;
+}
+
+.mem-section-sub {
+  margin-top: 0.75rem;
+  color: #4a556b;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* ---------- Hero ---------- */
+.mem-hero {
+  position: relative;
+  color: var(--white);
+  /* Navy gradient is baked in as a reliable base. It also acts as an overlay
+     when an optional hero photo is dropped in below — replace the url() with a
+     committed, web-optimized image at that path to enable the photo. */
+  background-color: var(--navy-blue);
+  background-image: linear-gradient(
+      160deg,
+      rgba(26, 40, 71, 0.94) 0%,
+      rgba(26, 40, 71, 0.82) 55%,
+      rgba(26, 40, 71, 0.68) 100%
+    ),
+    url('/Website%20Pictures/DSC03750.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.mem-hero-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.25rem 3.5rem;
+}
+
+.mem-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--silver);
+  margin-bottom: 1rem;
+}
+
+.mem-hero-title {
+  color: var(--white);
+  font-size: 2.6rem;
+  line-height: 1.08;
+  margin: 0;
+  max-width: 16ch;
+}
+.mem-hero-title em {
+  font-style: italic;
+  color: var(--silver);
+}
+
+.mem-hero-lede {
+  margin-top: 1.25rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--light-gray);
+  max-width: 42ch;
+}
+
+.mem-hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Intro ---------- */
+.mem-intro {
+  padding: 3rem 0;
+}
+
+.mem-intro-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.mem-intro-copy p {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #35415c;
+}
+
+.mem-intro-card {
+  background-color: var(--navy-blue);
+  color: var(--white);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+
+.mem-intro-card-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--silver);
+}
+
+.mem-intro-prices {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+.mem-intro-prices div {
+  display: flex;
+  flex-direction: column;
+}
+.mem-intro-prices strong {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--white);
+}
+.mem-intro-prices span {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--silver);
+}
+.mem-intro-card-note {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--light-gray);
+  border-top: 1px solid rgba(168, 178, 193, 0.3);
+  padding-top: 1rem;
+}
+
+/* ---------- Tiers ---------- */
+.mem-tiers {
+  padding: 3rem 0;
+  background-color: var(--light-gray);
+}
+
+.mem-tier-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.mem-tier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 14px;
+  padding: 2rem 1.5rem 1.75rem;
+  box-shadow: 0 2px 10px rgba(26, 40, 71, 0.05);
+}
+
+.mem-tier-featured {
+  border-color: var(--red-accent);
+  box-shadow: 0 8px 28px rgba(196, 30, 58, 0.16);
+}
+
+.mem-tier-badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 1.5rem;
+  background-color: var(--red-accent);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+.mem-tier-name {
+  font-size: 1.6rem;
+  color: var(--navy-blue);
+  margin: 0.25rem 0 0.4rem;
+}
+
+.mem-tier-tagline {
+  color: #566178;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  min-height: 2.8em;
+}
+
+.mem-tier-prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid #eef1f6;
+  border-bottom: 1px solid #eef1f6;
+}
+.mem-tier-price {
+  display: flex;
+  flex-direction: column;
+}
+.mem-tier-amount {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--navy-blue);
+}
+.mem-tier-price-label {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: #6b7488;
+}
+
+.mem-tier-perks {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  flex: 1;
+}
+.mem-tier-perks li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #35415c;
+}
+.mem-tier-perks li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--red-accent);
+}
+
+.mem-tier-note {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #6b7488;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.mem-tier-cta {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* ---------- Weekend ---------- */
+.mem-weekend {
+  padding: 3rem 0;
+  background-color: var(--navy-blue);
+  color: var(--white);
+}
+.mem-weekend .mem-section-title {
+  color: var(--white);
+}
+.mem-weekend .mem-section-sub {
+  color: var(--silver);
+}
+
+.mem-weekend-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  counter-reset: none;
+}
+
+.mem-weekend-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(168, 178, 193, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.mem-weekend-index {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--red-accent);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.mem-weekend-time {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--silver);
+}
+.mem-weekend-title {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin: 0.2rem 0 0.35rem;
+}
+.mem-weekend-step p {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ---------- Groups ---------- */
+.mem-groups {
+  padding: 3rem 0;
+}
+
+.mem-group-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.mem-group-card {
+  border: 1px solid #e2e6ee;
+  border-left: 4px solid var(--red-accent);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: var(--white);
+}
+.mem-group-title {
+  font-size: 1.25rem;
+  color: var(--navy-blue);
+  margin: 0;
+}
+.mem-group-price {
+  color: var(--red-accent);
+  font-weight: 700;
+  margin: 0.35rem 0 0.75rem;
+}
+.mem-group-desc {
+  color: #35415c;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.mem-groups-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ---------- Partners ---------- */
+.mem-partners {
+  padding: 2.5rem 0;
+  background-color: var(--light-gray);
+  text-align: center;
+}
+.mem-partners-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6b7488;
+  margin-bottom: 1.25rem;
+}
+.mem-partners-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.mem-partners-list li {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+/* ---------- Fine print ---------- */
+.mem-fineprint {
+  padding: 2.5rem 0;
+}
+.mem-fineprint-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #e2e6ee;
+  border-bottom: 1px solid #e2e6ee;
+  padding: 1.25rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+  cursor: pointer;
+}
+.mem-fineprint-toggle:hover {
+  background-color: transparent;
+  color: var(--red-accent);
+}
+.mem-fineprint-toggle .mem-section-num {
+  margin-bottom: 0;
+}
+.mem-fineprint-chevron {
+  margin-left: auto;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--red-accent);
+}
+.mem-fineprint-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+.mem-fineprint-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4a556b;
+}
+.mem-fineprint-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--silver);
+}
+
+/* ---------- Closing CTA ---------- */
+.mem-closing {
+  background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
+  color: var(--white);
+  padding: 3.5rem 0;
+  text-align: center;
+}
+.mem-closing-title {
+  color: var(--white);
+  font-size: 2rem;
+  margin: 0 0 0.75rem;
+}
+.mem-closing-inner p {
+  color: var(--light-gray);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  max-width: 44ch;
+  margin: 0 auto 1.75rem;
+}
+
+/* ============================================================
+   Tablet
+   ============================================================ */
+@media (min-width: 768px) {
+  .mem-container,
+  .mem-hero-inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .mem-hero-inner {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+  .mem-hero-title {
+    font-size: 3.75rem;
+  }
+  .mem-hero-lede {
+    font-size: 1.3rem;
+  }
+  .mem-hero-cta {
+    flex-direction: row;
+  }
+
+  .mem-section-title {
+    font-size: 2.4rem;
+  }
+
+  .mem-intro-grid {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .mem-tier-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .mem-weekend-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mem-group-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   Desktop
+   ============================================================ */
+@media (min-width: 1024px) {
+  .mem-intro,
+  .mem-tiers,
+  .mem-weekend,
+  .mem-groups {
+    padding: 4.5rem 0;
+  }
+
+  .mem-tier-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Founding + Quarterdeck (items 4 & 5) share the last row nicely */
+  .mem-weekend-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .mem-hero-title {
+    font-size: 4.5rem;
+  }
+}

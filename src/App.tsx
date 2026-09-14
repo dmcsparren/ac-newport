@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+import { features } from './config/features'
 import TicketBanner from './components/TicketBanner/TicketBanner'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
@@ -18,6 +19,7 @@ import TryoutsTestPage from './pages/TryoutsTestPage'
 import TrialsPage from './pages/TrialsPage'
 import TrialsTestPage from './pages/TrialsTestPage'
 import PaymentSuccessPage from './pages/PaymentSuccessPage'
+import MembershipsPage from './pages/MembershipsPage'
 
 function App() {
   return (
@@ -32,6 +34,9 @@ function App() {
             <Route path="/team" element={<TeamPage />} />
             <Route path="/schedule" element={<SchedulePage />} />
             <Route path="/tickets" element={<TicketsPage />} />
+            {features.memberships && (
+              <Route path="/memberships" element={<MembershipsPage />} />
+            )}
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/supporters" element={<SupportersPage />} />
             <Route path="/youth-programs" element={<YouthProgramsPage />} />

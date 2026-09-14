@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { features } from '../../config/features'
 import './Hero.css'
 
 const Hero = () => {
@@ -20,8 +21,17 @@ const Hero = () => {
             America's most iconic sporting destinations.
           </p>
           <div className="hero-cta">
-            <a href="https://tickets.acnewport.com" className="cta-primary">Get Tickets</a>
-            <Link to="/community" className="cta-secondary">Join Our Community</Link>
+            {features.memberships ? (
+              <>
+                <Link to="/memberships" className="cta-primary">2027 Season Memberships</Link>
+                <a href="https://tickets.acnewport.com" className="cta-secondary">Get Tickets</a>
+              </>
+            ) : (
+              <>
+                <a href="https://tickets.acnewport.com" className="cta-primary">Get Tickets</a>
+                <Link to="/community" className="cta-secondary">Join Our Community</Link>
+              </>
+            )}
           </div>
         </div>
         <div className="hero-image">
