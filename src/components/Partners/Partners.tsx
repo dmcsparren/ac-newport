@@ -1,6 +1,7 @@
 import PageHero from '../PageHero/PageHero'
 import PhotoBand from '../PhotoBand/PhotoBand'
 import MailingListForm from '../MailingListForm/MailingListForm'
+import { partners } from '../Memberships/membershipsData'
 import './Partners.css'
 
 const tiers = [
@@ -19,19 +20,6 @@ const tiers = [
     title: 'Shared programmes',
     body: 'Co-branded youth clinics, community events, and island initiatives.',
   },
-]
-
-const partners = [
-  'NPT Health Works',
-  'NOSOLO',
-  'The Pell',
-  'CRU Cafe',
-  'NEXT STEP Academy',
-  'Bloom',
-  'International Tennis Hall of Fame',
-  'Newport Neighbors',
-  'MAC Designs Newport',
-  'NPSL',
 ]
 
 const Partners = () => {
@@ -85,11 +73,20 @@ const Partners = () => {
           <h2 className="display-title section-title partners-roster-title">
             Our partners <em>&amp; supporters.</em>
           </h2>
-          <ul className="chip-list partners-chips">
+          <ul className="logo-grid partners-logos">
             {partners.map((partner) => (
-              <li key={partner}>{partner}</li>
+              <li key={partner.name} className="logo-cell">
+                {partner.href ? (
+                  <a href={partner.href} target="_blank" rel="noopener noreferrer" aria-label={partner.name}>
+                    <img src={partner.logo} alt={partner.name} loading="lazy" />
+                  </a>
+                ) : (
+                  <img src={partner.logo} alt={partner.name} loading="lazy" />
+                )}
+              </li>
             ))}
           </ul>
+          <p className="partners-supporters-label">Proud member of the National Premier Soccer League</p>
         </div>
       </section>
 

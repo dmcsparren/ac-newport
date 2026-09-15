@@ -81,9 +81,17 @@ const Memberships = () => {
       <section className="mem-partners">
         <div className="mem-container">
           <p className="mem-partners-label">In good company</p>
-          <ul className="mem-partners-list">
+          <ul className="logo-grid">
             {partners.map((partner) => (
-              <li key={partner}>{partner}</li>
+              <li key={partner.name} className="logo-cell">
+                {partner.href ? (
+                  <a href={partner.href} target="_blank" rel="noopener noreferrer" aria-label={partner.name}>
+                    <img src={partner.logo} alt={partner.name} loading="lazy" />
+                  </a>
+                ) : (
+                  <img src={partner.logo} alt={partner.name} loading="lazy" />
+                )}
+              </li>
             ))}
           </ul>
         </div>

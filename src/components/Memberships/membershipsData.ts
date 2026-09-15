@@ -173,13 +173,23 @@ export const groupOffers: GroupOffer[] = [
   },
 ]
 
-export const partners: string[] = [
-  'International Tennis Hall of Fame',
-  'The Pell',
-  'Newport Neighbors',
-  'CRU Cafe',
-  'NEXT STEP Academy',
-  'Bloom',
+export interface Partner {
+  name: string
+  logo: string
+  href?: string
+}
+
+export const partners: Partner[] = [
+  { name: 'NPT Health Works', logo: '/images/partners/npt-health-works.jpeg', href: 'http://npthealthworks.com' },
+  { name: 'NoSolo', logo: '/images/partners/nosolo.jpg', href: 'http://shop.nosolobrand.com' },
+  { name: 'Willett Team', logo: '/images/partners/willett-team.jpg', href: 'https://willettteam.com/' },
+  { name: 'The Pell', logo: '/images/partners/the-pell.png', href: 'https://www.hyatt.com/jdv-by-hyatt/en-US/pvdjd-the-pell' },
+  { name: 'Newport Neighbors', logo: '/images/partners/newport-neighbors.png' },
+  { name: 'CRU Cafe', logo: '/images/partners/cru-cafe.png', href: 'https://crucafenewport.com/' },
+  { name: 'NEXT STEP', logo: '/images/partners/next-step.png', href: 'https://www.next-step-training.com/' },
+  { name: 'Bloom Bus', logo: '/images/partners/bloom-bus.png', href: 'https://www.bloombus.com/' },
+  { name: 'International Tennis Hall of Fame', logo: '/images/partners/tennis-hall-of-fame.png', href: 'https://www.tennisfame.com/' },
+  { name: 'MAC Designs Newport', logo: '/images/partners/mac-designs.png', href: 'https://www.macdesignsnewport.com/' },
 ]
 
 export const finePrint: string[] = [
