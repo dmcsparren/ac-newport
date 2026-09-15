@@ -164,6 +164,84 @@ h3 {
   }
 }
 
+/* Intro lede beneath a centered section head */
+.intro-lede {
+  margin-top: 1.25rem;
+  font-size: 1.1rem;
+}
+/* Lede inside a navy sign-up section */
+.signup-lede {
+  color: var(--light-gray);
+  line-height: 1.6;
+  margin: 1rem 0 2rem;
+}
+/* Partner/name chips */
+.chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.chip-list li {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+/* Generic card grid used across interior pages */
+.card-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+.card-grid--2 {
+  grid-template-columns: 1fr;
+}
+.card-grid--3 {
+  grid-template-columns: 1fr;
+}
+.card {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-top: 3px solid var(--red-accent);
+  border-radius: 4px;
+  padding: 1.75rem 1.5rem;
+}
+.card-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--red-accent);
+}
+.card-title {
+  font-size: 1.35rem;
+  color: var(--navy-blue);
+  margin: 0.35rem 0 0.5rem;
+}
+.card-body {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+@media (min-width: 768px) {
+  .card-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card-grid {
+    gap: 1.75rem;
+  }
+}
+
 /* Shared button system */
 .btn {
   display: inline-flex;

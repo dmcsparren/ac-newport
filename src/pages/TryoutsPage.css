@@ -4,23 +4,49 @@
 }
 
 .tryouts-hero {
-  background: #ffffff;
-  padding: 6rem 2rem 4rem;
+  position: relative;
+  padding: 5rem 2rem 3.5rem;
   text-align: center;
-  color: var(--navy-blue);
-  border-bottom: 3px solid rgba(192, 192, 192, 0.3);
+  color: var(--white);
+  overflow: hidden;
+  background-color: var(--navy-deep);
+}
+
+.tryouts-hero-media {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/DSC03750.jpg');
+  background-size: cover;
+  background-position: center 30%;
+}
+
+.tryouts-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(19, 31, 56, 0.72) 0%,
+    rgba(19, 31, 56, 0.82) 100%
+  );
+}
+
+.tryouts-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .tryouts-hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--navy-blue);
+  font-size: clamp(2.4rem, 8vw, 3.75rem);
+  margin: 0.75rem 0 1rem;
+  color: var(--white);
 }
 
-.hero-subtitle {
-  font-size: 1.3rem;
-  color: #2d3e5f;
-  max-width: 800px;
+.tryouts-hero .hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--light-gray);
+  max-width: 640px;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -141,12 +167,8 @@
     padding: 4rem 1.5rem 3rem;
   }
 
-  .tryouts-hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
+  .tryouts-hero .hero-subtitle {
+    font-size: 1.05rem;
   }
 
   .tryouts-content {

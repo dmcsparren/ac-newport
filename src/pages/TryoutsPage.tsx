@@ -5,8 +5,13 @@ const TryoutsPage = () => {
   return (
     <div className="tryouts-page">
       <section className="tryouts-hero">
+        <div className="tryouts-hero-media" />
+        <div className="tryouts-hero-scrim" />
         <div className="tryouts-hero-content">
-          <h1>Register for Tryouts</h1>
+          <p className="eyebrow eyebrow--light eyebrow--center">Tryouts · 2026 Season</p>
+          <h1 className="display-title display-title--light">
+            Register for <em>tryouts.</em>
+          </h1>
           <p className="hero-subtitle">
             AC Newport is seeking committed, competitive players for the club's first Men's team.
           </p>
