@@ -36,6 +36,8 @@ const Header = () => {
           {features.memberships && (
             <Link to="/memberships" onClick={() => setIsMenuOpen(false)}>Memberships</Link>
           )}
+          {/* Trial Registration link hidden for now — /trials route still active, re-enable when needed */}
+          {/* <Link to="/trials" onClick={() => setIsMenuOpen(false)}>Trial Registration</Link> */}
           <Link to="/community" onClick={() => setIsMenuOpen(false)}>Community</Link>
         </nav>
       </div>
