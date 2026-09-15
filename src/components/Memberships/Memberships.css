@@ -92,6 +92,18 @@
   margin-top: 2rem;
 }
 
+/* ---------- Coming soon ---------- */
+.mem-coming-title {
+  font-size: clamp(2.4rem, 8vw, 3.75rem);
+}
+.mem-coming-lede {
+  margin-top: 1.25rem;
+  font-size: 1.12rem;
+}
+.mem-coming-cta {
+  margin-top: 1.75rem;
+}
+
 /* ---------- Intro ---------- */
 .mem-intro {
   padding: 4rem 0;

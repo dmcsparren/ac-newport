@@ -1,18 +1,8 @@
-import { useState } from 'react'
 import './Memberships.css'
-import {
-  tiers,
-  singleMatchPricing,
-  weekendSteps,
-  groupOffers,
-  partners,
-  finePrint,
-  ticketsUrl,
-} from './membershipsData'
+import MailingListForm from '../MailingListForm/MailingListForm'
+import { weekendSteps, partners } from './membershipsData'
 
 const Memberships = () => {
-  const [finePrintOpen, setFinePrintOpen] = useState(false)
-
   return (
     <div className="memberships">
       {/* Hero */}
@@ -30,8 +20,8 @@ const Memberships = () => {
             harbour, and hospitality — held to the standard Newport expects.
           </p>
           <div className="mem-hero-cta">
-            <a href="#tickets" className="btn btn-primary">
-              Explore Season Tickets
+            <a href="#notify" className="btn btn-primary">
+              Join the waitlist
             </a>
             <a href="#weekend" className="btn btn-ghost">
               Plan the Weekend
@@ -40,78 +30,21 @@ const Memberships = () => {
         </div>
       </section>
 
-      {/* Intro / single-match context */}
-      <section className="mem-intro">
-        <div className="mem-narrow">
-          <p className="eyebrow eyebrow--center">The Case for the Season</p>
-          <h2 className="display-title mem-intro-title">
-            Newport has always drawn the world for sport.
-            <em>Now it has a club.</em>
+      {/* Coming soon */}
+      <section className="section">
+        <div className="container measure section-head--center">
+          <p className="eyebrow eyebrow--center">Season Tickets &amp; Membership</p>
+          <h2 className="display-title section-title mem-coming-title">
+            Coming <em>soon.</em>
           </h2>
-          <p className="lede mem-intro-lede">
-            Tennis has its Hall of Fame here. Sailing has its harbour. AC Newport
-            gives the island its football season — an international club on its own
-            journey through the American ranks, with a fixture list built for
-            residents and for the visitors who plan a weekend around it.
+          <p className="lede mem-coming-lede">
+            Season tickets and Founding Membership for the 2027 campaign are on
+            their way. Join the list and we'll let you know the moment they're
+            available — before general release.
           </p>
-          <div className="mem-rule" />
-          <p className="mem-intro-price">
-            Single match — {singleMatchPricing.adult} adult ·{' '}
-            {singleMatchPricing.youth} child (12 &amp; under). A full season pays
-            for itself in eight matches.
-          </p>
-        </div>
-      </section>
-
-      {/* Season ticket tiers */}
-      <section className="mem-tiers" id="tickets">
-        <div className="mem-container">
-          <header className="mem-section-head">
-            <p className="eyebrow">I. Season Tickets</p>
-            <h2 className="display-title mem-section-title">
-              Choose how you <em>hold your place.</em>
-            </h2>
-          </header>
-
-          <div className="mem-tier-grid">
-            {tiers.map((tier) => (
-              <article
-                key={tier.id}
-                id={tier.id === 'founding' ? 'membership' : undefined}
-                className={`mem-tier${tier.featured ? ' mem-tier-featured' : ''}`}
-              >
-                {tier.badge && <span className="mem-tier-badge">{tier.badge}</span>}
-                <h3 className="mem-tier-name">{tier.name}</h3>
-                <p className="mem-tier-tagline">{tier.tagline}</p>
-
-                <div className="mem-tier-prices">
-                  {tier.prices.map((p) => (
-                    <div key={p.label} className="mem-tier-price">
-                      <span className="mem-tier-amount">{p.amount}</span>
-                      <span className="mem-tier-price-label">{p.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <ul className="mem-tier-perks">
-                  {tier.perks.map((perk) => (
-                    <li key={perk}>{perk}</li>
-                  ))}
-                </ul>
-
-                {tier.note && <p className="mem-tier-note">{tier.note}</p>}
-
-                <a
-                  href={ticketsUrl}
-                  className={`btn mem-tier-cta${
-                    tier.featured ? ' btn-primary' : ' btn-outline'
-                  }`}
-                >
-                  {tier.ctaLabel}
-                </a>
-              </article>
-            ))}
-          </div>
+          <a href="#notify" className="btn btn-outline mem-coming-cta">
+            Notify me
+          </a>
         </div>
       </section>
 
@@ -120,7 +53,7 @@ const Memberships = () => {
         <div className="mem-weekend-grid">
           <div className="mem-weekend-media" role="img" aria-label="A Newport matchday weekend" />
           <div className="mem-weekend-content">
-            <p className="eyebrow eyebrow--light">II. The Newport Weekend</p>
+            <p className="eyebrow eyebrow--light">The Newport Weekend</p>
             <h2 className="display-title display-title--light mem-weekend-title">
               More than ninety minutes.
               <em>A destination season.</em>
@@ -144,34 +77,6 @@ const Memberships = () => {
         </div>
       </section>
 
-      {/* Groups & Corporate */}
-      <section className="mem-groups">
-        <div className="mem-container">
-          <header className="mem-section-head">
-            <p className="eyebrow">III. Groups &amp; Corporate</p>
-            <h2 className="display-title mem-section-title">
-              Bring the club, the office, <em>or the away end.</em>
-            </h2>
-          </header>
-
-          <div className="mem-group-grid">
-            {groupOffers.map((offer) => (
-              <article key={offer.title} className="mem-group-card">
-                <h3 className="mem-group-title">{offer.title}</h3>
-                <p className="mem-group-price">{offer.price}</p>
-                <p className="mem-group-desc">{offer.description}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="mem-groups-cta">
-            <a href="/contact" className="btn btn-outline">
-              Enquire about groups
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Partners */}
       <section className="mem-partners">
         <div className="mem-container">
@@ -184,46 +89,18 @@ const Memberships = () => {
         </div>
       </section>
 
-      {/* Fine print */}
-      <section className="mem-fineprint">
-        <div className="mem-container">
-          <button
-            type="button"
-            className="mem-fineprint-toggle"
-            aria-expanded={finePrintOpen}
-            onClick={() => setFinePrintOpen((open) => !open)}
-          >
-            <span className="mem-fineprint-num">IV.</span>
-            The Fine Print
-            <span className="mem-fineprint-chevron" aria-hidden="true">
-              {finePrintOpen ? '−' : '+'}
-            </span>
-          </button>
-          {finePrintOpen && (
-            <ul className="mem-fineprint-list">
-              {finePrint.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </section>
-
-      {/* Closing CTA */}
-      <section className="mem-closing">
-        <div className="mem-closing-scrim" />
-        <div className="mem-closing-inner">
-          <p className="eyebrow eyebrow--center eyebrow--light">MMXXVII</p>
-          <h2 className="display-title display-title--light mem-closing-title">
-            Reserve your <em>season.</em>
+      {/* Notify / sign up */}
+      <section className="section section--navy" id="notify">
+        <div className="container measure section-head--center">
+          <p className="eyebrow eyebrow--center eyebrow--light">Be first to know</p>
+          <h2 className="display-title display-title--light section-title">
+            Join the waitlist
           </h2>
-          <p className="mem-closing-lede">
-            Ten Saturday evenings on Aquidneck Island. Hold your place before the
-            Founding hundred are gone.
+          <p className="signup-lede">
+            Leave your details and we'll be in touch the moment 2027 season tickets
+            and membership go live.
           </p>
-          <a href={ticketsUrl} className="btn btn-primary">
-            Reserve now
-          </a>
+          <MailingListForm id="memberships" />
         </div>
       </section>
     </div>

@@ -14,10 +14,10 @@ const Tickets = () => {
             <div className="tickets-memberships-cta">
               <p>
                 Season tickets and Founding Membership for the 2027 campaign are
-                now open — ten home occasions on Aquidneck Island.
+                coming soon — ten home occasions on Aquidneck Island.
               </p>
               <Link to="/memberships" className="tickets-memberships-btn">
-                View Season Memberships
+                Join the waitlist
               </Link>
             </div>
           ) : (
