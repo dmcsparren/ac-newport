@@ -124,6 +124,46 @@ h3 {
   line-height: 1.7;
 }
 
+/* Shared layout helpers for interior pages */
+.section {
+  padding: 3.5rem 0;
+}
+.section--tint {
+  background-color: var(--light-gray);
+}
+.section--navy {
+  background-color: var(--navy-blue);
+  color: var(--white);
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.measure {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.section-title {
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  margin: 0.75rem 0 0;
+}
+.section-head {
+  margin-bottom: 2.5rem;
+}
+.section-head--center {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .section {
+    padding: 5.5rem 0;
+  }
+  .container {
+    padding: 0 2rem;
+  }
+}
+
 /* Shared button system */
 .btn {
   display: inline-flex;

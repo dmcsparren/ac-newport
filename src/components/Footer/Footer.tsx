@@ -7,9 +7,13 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-section">
+        <div className="footer-section footer-brand">
+          <img src="/logo.png" alt="AC Newport crest" className="footer-crest" />
           <h3>AC Newport</h3>
-          <p>Established 2026</p>
+          <p className="footer-tagline">
+            An international club on its journey through the American ranks —
+            Newport, Rhode Island. Est. MMXXVI.
+          </p>
         </div>
 
         <div className="footer-section">

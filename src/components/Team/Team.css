@@ -1,34 +1,47 @@
-.team-section {
-  padding: 3rem 2rem;
-  margin: 3rem 0;
-  background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
-  color: white;
+.team-intro-lede {
+  margin-top: 1.25rem;
+  font-size: 1.1rem;
 }
 
-.team-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
+.team-leader-grid {
+  display: grid;
+  gap: 1.25rem;
 }
 
-.team-container {
-  max-width: 800px;
-  margin: 0 auto;
+.team-leader-card {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-left: 3px solid var(--red-accent);
+  border-radius: 4px;
+  padding: 1.75rem 1.5rem;
+}
+.team-leader-role {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--red-accent);
+}
+.team-leader-name {
+  font-size: 1.5rem;
+  color: var(--navy-blue);
+  margin: 0.35rem 0 0.6rem;
+}
+.team-leader-bio {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
 }
 
-.team-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: white;
+.team-signup-lede {
+  color: var(--light-gray);
+  line-height: 1.6;
+  margin: 1rem 0 2rem;
 }
 
-@media (max-width: 768px) {
-  .team-section {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
-  }
-
-  .team-container h2 {
-    font-size: 2rem;
+@media (min-width: 768px) {
+  .team-leader-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
   }
 }

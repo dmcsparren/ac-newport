@@ -35,9 +35,13 @@ const Schedule = () => {
     <div className="schedule">
       {/* Hero Section */}
       <div className="schedule-hero">
+        <div className="schedule-hero-media" />
+        <div className="schedule-hero-scrim" />
         <div className="schedule-hero-content">
-          <span className="hero-badge">North Atlantic Conference · 2026 Season</span>
-          <h1>2026 Schedule</h1>
+          <p className="eyebrow eyebrow--light eyebrow--center">North Atlantic Conference · 2026 Season</p>
+          <h1 className="display-title display-title--light schedule-hero-title">
+            The 2026 <em>Schedule</em>
+          </h1>
           <p className="hero-subtitle">
             All kickoff times listed in Eastern Time<br />
             Home games at Toppa Field, Newport, RI
