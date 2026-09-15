@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero/Hero'
 import News from '../components/News/News'
-import TrialBanner from '../components/TrialBanner/TrialBanner'
+//import TrialBanner from '../components/TrialBanner/TrialBanner'
 import MailingListForm from '../components/MailingListForm/MailingListForm'
 import './Home.css'
 
@@ -119,7 +119,7 @@ const Home = () => {
         </div>
       </section>
 
-      <TrialBanner />
+      {/* <TrialBanner /> */}
       <News />
 
       {/* Mailing list */}
