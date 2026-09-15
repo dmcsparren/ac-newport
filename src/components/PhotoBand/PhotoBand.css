@@ -1,0 +1,40 @@
+.photo-band {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--navy-deep);
+  overflow: hidden;
+}
+
+.photo-band-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(19, 31, 56, 0.6) 0%,
+    rgba(19, 31, 56, 0.78) 100%
+  );
+}
+
+.photo-band-inner {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.photo-band-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  line-height: 1.25;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .photo-band-inner {
+    padding: 7rem 1.5rem;
+  }
+}

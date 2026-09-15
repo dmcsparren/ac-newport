@@ -1,13 +1,18 @@
 :root {
   /* AC Newport Brand Colors */
   --navy-blue: #1a2847;
+  --navy-deep: #131f38;
   --white: #ffffff;
   --red-accent: #c41e3a;
+  --red-deep: #a01629;
   --silver: #a8b2c1;
   --light-gray: #f5f5f5;
+  --ink-muted: #4a556b; /* muted body copy on light backgrounds */
 
-  /* Typography */
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Typography — matches acn.pplx.app: Instrument Serif display, Switzer body */
+  --font-body: 'Switzer', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
 
@@ -32,6 +37,14 @@ body {
   min-height: 100vh;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -46,6 +59,283 @@ h2 {
 h3 {
   font-size: 1.8em;
   color: var(--navy-blue);
+}
+
+/* ============================================================
+   Shared editorial helpers (reference: acn.pplx.app aesthetic)
+   Used by Home and Memberships. Palette-locked to navy/red/silver.
+   ============================================================ */
+
+/* Eyebrow: letter-spaced caps label with a trailing rule */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--red-accent);
+}
+.eyebrow::after {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.55;
+}
+.eyebrow--center {
+  justify-content: center;
+}
+.eyebrow--center::before {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.55;
+}
+.eyebrow--light {
+  color: var(--silver);
+}
+
+/* Display headline with an italic red accent line */
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: normal;
+  color: var(--navy-blue);
+}
+.display-title em {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--red-accent);
+}
+.display-title--light {
+  color: var(--white);
+}
+
+/* Muted editorial body copy */
+.lede {
+  font-family: var(--font-body);
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+/* Shared layout helpers for interior pages */
+.section {
+  padding: 3.5rem 0;
+}
+.section--tint {
+  background-color: var(--light-gray);
+}
+.section--navy {
+  background-color: var(--navy-blue);
+  color: var(--white);
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.measure {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.section-title {
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  margin: 0.75rem 0 0;
+}
+.section-head {
+  margin-bottom: 2.5rem;
+}
+.section-head--center {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .section {
+    padding: 5.5rem 0;
+  }
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Intro lede beneath a centered section head */
+.intro-lede {
+  margin-top: 1.25rem;
+  font-size: 1.1rem;
+}
+/* Lede inside a navy sign-up section */
+.signup-lede {
+  color: var(--light-gray);
+  line-height: 1.6;
+  margin: 1rem 0 2rem;
+}
+/* Partner/name chips */
+.chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.chip-list li {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+/* Partner logo grid */
+.logo-grid {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+.logo-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 4px;
+  padding: 0.85rem 0.9rem;
+  min-height: 140px;
+}
+.logo-cell a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.2s ease;
+}
+.logo-cell a:hover {
+  opacity: 0.65;
+}
+.logo-cell img {
+  width: 100%;
+  height: 100%;
+  max-height: 108px;
+  object-fit: contain;
+}
+@media (min-width: 600px) {
+  .logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 1000px) {
+  .logo-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Generic card grid used across interior pages */
+.card-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+.card-grid--2 {
+  grid-template-columns: 1fr;
+}
+.card-grid--3 {
+  grid-template-columns: 1fr;
+}
+.card {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-top: 3px solid var(--red-accent);
+  border-radius: 4px;
+  padding: 1.75rem 1.5rem;
+}
+.card-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--red-accent);
+}
+.card-title {
+  font-size: 1.35rem;
+  color: var(--navy-blue);
+  margin: 0.35rem 0 0.5rem;
+}
+.card-body {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+@media (min-width: 768px) {
+  .card-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card-grid {
+    gap: 1.75rem;
+  }
+}
+
+/* Shared button system */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 1.75rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-primary {
+  background-color: var(--red-accent);
+  color: var(--white);
+  border-color: var(--red-accent);
+}
+.btn-primary:hover {
+  background-color: var(--red-deep);
+  border-color: var(--red-deep);
+  color: var(--white);
+}
+.btn-outline {
+  background-color: transparent;
+  color: var(--navy-blue);
+  border-color: var(--navy-blue);
+}
+.btn-outline:hover {
+  background-color: var(--navy-blue);
+  color: var(--white);
+}
+.btn-ghost {
+  background-color: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.btn-ghost:hover {
+  background-color: var(--white);
+  color: var(--navy-blue);
+  border-color: var(--white);
 }
 
 a {

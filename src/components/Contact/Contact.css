@@ -1,34 +1,86 @@
-.contact-section {
-  padding: 3rem 2rem;
-  margin: 3rem 0;
-  background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
-  color: white;
+.contact-grid {
+  display: grid;
+  gap: 2.5rem;
 }
 
-.contact-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
+.contact-detail-list {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+}
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid #e2e6ee;
+}
+.contact-detail:last-child {
+  border-bottom: 1px solid #e2e6ee;
+}
+.contact-detail-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--red-accent);
+}
+.contact-detail-value {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--navy-blue);
+  text-decoration: none;
+}
+a.contact-detail-value:hover {
+  color: var(--red-accent);
 }
 
-.contact-container {
-  max-width: 800px;
-  margin: 0 auto;
+.contact-social {
+  margin-top: 1.75rem;
+}
+.contact-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.6rem;
+}
+.contact-social-links a {
+  border: 1px solid #e2e6ee;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.contact-social-links a:hover {
+  border-color: var(--navy-blue);
+  color: var(--red-accent);
 }
 
-.contact-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: white;
+.contact-form-card {
+  background-color: var(--light-gray);
+  border: 1px solid #e2e6ee;
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+}
+.contact-form-title {
+  font-size: 1.6rem;
+  color: var(--navy-blue);
+  margin: 0.4rem 0 0.6rem;
+}
+.contact-form-lede {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
-  }
-
-  .contact-container h2 {
-    font-size: 2rem;
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
+    align-items: start;
   }
 }

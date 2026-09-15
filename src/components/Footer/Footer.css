@@ -36,6 +36,21 @@
   color: var(--red-accent);
 }
 
+.footer-brand {
+  max-width: 340px;
+}
+.footer-crest {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+.footer-tagline {
+  color: var(--silver);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
 .footer-section ul {
   list-style: none;
   padding: 0;

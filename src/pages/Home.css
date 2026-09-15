@@ -3,49 +3,229 @@
   flex-direction: column;
 }
 
-.home-mailing-list {
-  padding: 3rem 2rem;
-  margin: 3rem 0;
-  background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
-  color: white;
+.home-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
+.home-narrow {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.home-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-section-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin: 0.75rem 0 0;
+}
+
+/* ---------- Intro statement ---------- */
+.home-intro {
+  padding: 4rem 0 3rem;
+}
+.home-intro-title {
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  margin: 1rem 0 0;
+}
+.home-intro-lede {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+}
+
+/* ---------- Why AC Newport ---------- */
+.home-why {
+  padding: 2rem 0 3.5rem;
+}
+.home-why-grid {
+  display: grid;
+  gap: 2rem;
+}
+.home-why-media {
+  min-height: 320px;
+  background-image: url('/images/DSC03535.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+.home-why-content {
+  padding: 0 1.25rem;
+}
+.home-feature-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+.home-feature {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid #e2e6ee;
+}
+.home-feature:last-child {
+  border-bottom: 1px solid #e2e6ee;
+}
+.home-feature-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--red-accent);
+}
+.home-feature-title {
+  font-size: 1.3rem;
+  margin: 0 0 0.3rem;
+  color: var(--navy-blue);
+}
+.home-feature-body {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* ---------- Full-bleed matchday band ---------- */
+.home-band {
+  position: relative;
+  background-image: linear-gradient(
+      180deg,
+      rgba(19, 31, 56, 0.55) 0%,
+      rgba(19, 31, 56, 0.75) 100%
+    ),
+    url('/images/DSC03686.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--navy-deep);
+}
+.home-band-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+  color: var(--white);
+}
+.home-band-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  line-height: 1.25;
+  font-weight: 500;
+  margin-top: 1.25rem;
+}
+
+/* ---------- The full experience ---------- */
+.home-experience {
+  padding: 4rem 0;
+}
+.home-experience-head {
+  margin-bottom: 2.5rem;
+}
+.home-experience-grid {
+  display: grid;
+  gap: 1rem;
+}
+.home-experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid #e2e6ee;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: var(--white);
+  transition: all 0.25s ease;
+}
+.home-experience-card:hover {
+  border-color: var(--navy-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(26, 40, 71, 0.1);
+}
+.home-experience-label {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--navy-blue);
+}
+.home-experience-body {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+.home-experience-arrow {
+  margin-top: 0.5rem;
+  color: var(--red-accent);
+  font-size: 1.2rem;
+}
+
+/* ---------- Mailing list ---------- */
+.home-mailing-list {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
+  color: var(--white);
+}
 .mailing-list-wrapper {
   max-width: 1400px;
   margin: 0 auto;
 }
-
 .mailing-list-container {
-  max-width: 800px;
+  max-width: 760px;
   margin: 0 auto;
-}
-
-.mailing-list-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
   text-align: center;
-  color: white;
 }
-
+.mailing-list-container h2 {
+  font-size: 2.2rem;
+  margin: 0.75rem 0 1rem;
+  color: var(--white);
+}
 .mailing-list-intro {
   font-size: 1.1rem;
   line-height: 1.6;
-  text-align: center;
-  color: #e0e0e0;
+  color: var(--light-gray);
   margin-bottom: 2rem;
 }
 
-@media (max-width: 768px) {
-  .home-mailing-list {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
+/* ============================================================
+   Tablet / desktop
+   ============================================================ */
+@media (min-width: 768px) {
+  .home-container,
+  .home-why-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
-  .mailing-list-container h2 {
-    font-size: 2rem;
+  .home-intro {
+    padding: 6rem 0 4rem;
   }
 
-  .mailing-list-intro {
-    font-size: 1rem;
+  .home-why {
+    padding: 3rem 0 5rem;
+  }
+  .home-why-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .home-why-media {
+    min-height: 520px;
+    align-self: stretch;
+  }
+  .home-why-content {
+    padding: 0;
+  }
+
+  .home-experience-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .home-band-inner {
+    padding: 7rem 1.5rem;
   }
 }

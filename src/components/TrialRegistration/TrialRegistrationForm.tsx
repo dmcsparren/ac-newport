@@ -3,6 +3,7 @@ import './TryoutRegistrationForm.css'
 
 // Declare Stripe custom element for TypeScript
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace -- required to type the <stripe-buy-button> custom element
   namespace JSX {
     interface IntrinsicElements {
       'stripe-buy-button': {

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { features } from '../../config/features'
 import './Header.css'
 
 const Header = () => {
@@ -32,7 +33,11 @@ const Header = () => {
           <Link to="/team" onClick={() => setIsMenuOpen(false)}>Team</Link>
           <Link to="/schedule" onClick={() => setIsMenuOpen(false)}>Schedule</Link>
           <a href="https://tickets.acnewport.com" onClick={() => setIsMenuOpen(false)}>Tickets</a>
-          <Link to="/trials" onClick={() => setIsMenuOpen(false)}>Trial Registration</Link>
+          {features.memberships && (
+            <Link to="/memberships" onClick={() => setIsMenuOpen(false)}>Memberships</Link>
+          )}
+          {/* Trial Registration link hidden for now — /trials route still active, re-enable when needed */}
+          {/* <Link to="/trials" onClick={() => setIsMenuOpen(false)}>Trial Registration</Link> */}
           <Link to="/community" onClick={() => setIsMenuOpen(false)}>Community</Link>
         </nav>
       </div>

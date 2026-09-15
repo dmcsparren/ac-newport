@@ -1,0 +1,522 @@
+/* ============================================================
+   2027 Season Memberships — editorial, mobile-first
+   Reference: acn.pplx.app. Palette: navy / red / silver.
+   Shared helpers (.eyebrow, .display-title, .btn, .lede) live in index.css
+   ============================================================ */
+
+.memberships {
+  color: var(--navy-blue);
+  background-color: var(--white);
+}
+
+.mem-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.mem-narrow {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.mem-rule {
+  width: 60px;
+  height: 1px;
+  background-color: var(--silver);
+  margin: 2rem auto;
+}
+
+.mem-section-head {
+  margin-bottom: 2.5rem;
+}
+.mem-section-title {
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  margin: 0.75rem 0 0;
+}
+
+/* ---------- Hero ---------- */
+.mem-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 82vh;
+  overflow: hidden;
+  background-color: var(--navy-deep);
+}
+.mem-hero-media {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/DSC03750.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.mem-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(19, 31, 56, 0.5) 0%,
+      rgba(19, 31, 56, 0.3) 40%,
+      rgba(19, 31, 56, 0.9) 100%
+    ),
+    linear-gradient(90deg, rgba(19, 31, 56, 0.55) 0%, rgba(19, 31, 56, 0) 65%);
+}
+.mem-hero-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+  color: var(--white);
+}
+.mem-hero-title {
+  font-size: clamp(2.6rem, 11vw, 4rem);
+  margin: 1rem 0 0;
+  max-width: 14ch;
+}
+.mem-hero-lede {
+  margin-top: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--light-gray);
+  max-width: 44ch;
+}
+.mem-hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Coming soon ---------- */
+.mem-coming-title {
+  font-size: clamp(2.4rem, 8vw, 3.75rem);
+}
+.mem-coming-lede {
+  margin-top: 1.25rem;
+  font-size: 1.12rem;
+}
+.mem-coming-cta {
+  margin-top: 1.75rem;
+}
+
+/* ---------- Intro ---------- */
+.mem-intro {
+  padding: 4rem 0;
+}
+.mem-intro-title {
+  font-size: clamp(1.9rem, 6.5vw, 3.2rem);
+  margin: 1rem 0 0;
+}
+.mem-intro-lede {
+  margin-top: 1.5rem;
+  font-size: 1.12rem;
+}
+.mem-intro-price {
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 42ch;
+  margin: 0 auto;
+}
+
+/* ---------- Tiers ---------- */
+.mem-tiers {
+  padding: 3.5rem 0;
+  background-color: var(--light-gray);
+}
+.mem-tier-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.mem-tier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 4px;
+  padding: 2rem 1.5rem 1.75rem;
+}
+.mem-tier-featured {
+  border-color: var(--red-accent);
+  box-shadow: 0 10px 30px rgba(196, 30, 58, 0.14);
+}
+.mem-tier-badge {
+  position: absolute;
+  top: -0.7rem;
+  left: 1.5rem;
+  background-color: var(--red-accent);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 2px;
+}
+.mem-tier-name {
+  font-size: 1.7rem;
+  color: var(--navy-blue);
+  margin: 0.25rem 0 0.4rem;
+}
+.mem-tier-tagline {
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  min-height: 2.7em;
+}
+.mem-tier-prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+  padding: 1.1rem 0;
+  border-top: 1px solid #eef1f6;
+  border-bottom: 1px solid #eef1f6;
+}
+.mem-tier-price {
+  display: flex;
+  flex-direction: column;
+}
+.mem-tier-amount {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--navy-blue);
+}
+.mem-tier-price-label {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: #6b7488;
+}
+.mem-tier-perks {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  flex: 1;
+}
+.mem-tier-perks li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #35415c;
+}
+.mem-tier-perks li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--red-accent);
+}
+.mem-tier-note {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #6b7488;
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 1.25rem;
+}
+.mem-tier-cta {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* ---------- The Newport Weekend ---------- */
+.mem-weekend {
+  background-color: var(--navy-blue);
+  color: var(--white);
+}
+.mem-weekend-grid {
+  display: grid;
+}
+.mem-weekend-media {
+  min-height: 300px;
+  background-image: url('/images/DSC03664.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.mem-weekend-content {
+  padding: 3rem 1.25rem;
+}
+.mem-weekend-title {
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  margin: 1rem 0 0;
+}
+.mem-weekend-lede {
+  margin-top: 1.25rem;
+  color: var(--light-gray);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+.mem-weekend-steps {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+.mem-weekend-step {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(168, 178, 193, 0.25);
+}
+.mem-weekend-step:last-child {
+  border-bottom: 1px solid rgba(168, 178, 193, 0.25);
+}
+.mem-weekend-time {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--silver);
+}
+.mem-weekend-step-title {
+  color: var(--white);
+  font-size: 1.3rem;
+  margin: 0.2rem 0 0.35rem;
+}
+.mem-weekend-step p {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ---------- Groups ---------- */
+.mem-groups {
+  padding: 4rem 0;
+}
+.mem-group-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+.mem-group-card {
+  border: 1px solid #e2e6ee;
+  border-left: 3px solid var(--red-accent);
+  border-radius: 4px;
+  padding: 1.75rem 1.5rem;
+  background-color: var(--white);
+}
+.mem-group-title {
+  font-size: 1.4rem;
+  color: var(--navy-blue);
+  margin: 0;
+}
+.mem-group-price {
+  color: var(--red-accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  margin: 0.4rem 0 0.75rem;
+}
+.mem-group-desc {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.mem-groups-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+/* ---------- Partners ---------- */
+.mem-partners {
+  padding: 3rem 0;
+  background-color: var(--light-gray);
+  text-align: center;
+}
+.mem-partners-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #6b7488;
+  margin-bottom: 1.5rem;
+}
+.mem-partners-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.mem-partners-list li {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+/* ---------- Fine print ---------- */
+.mem-fineprint {
+  padding: 3rem 0;
+}
+.mem-fineprint-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #e2e6ee;
+  border-bottom: 1px solid #e2e6ee;
+  padding: 1.4rem 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+  cursor: pointer;
+}
+.mem-fineprint-toggle:hover {
+  background-color: transparent;
+  color: var(--red-accent);
+}
+.mem-fineprint-num {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--red-accent);
+}
+.mem-fineprint-chevron {
+  margin-left: auto;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--red-accent);
+}
+.mem-fineprint-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+.mem-fineprint-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+.mem-fineprint-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--silver);
+}
+
+/* ---------- Closing CTA ---------- */
+.mem-closing {
+  position: relative;
+  background-image: url('/images/DSC04359.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-color: var(--navy-deep);
+  overflow: hidden;
+}
+.mem-closing-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(19, 31, 56, 0.82) 0%,
+    rgba(19, 31, 56, 0.9) 100%
+  );
+}
+.mem-closing-inner {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+  color: var(--white);
+}
+.mem-closing-title {
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  margin: 1rem 0 1rem;
+}
+.mem-closing-lede {
+  color: var(--light-gray);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  max-width: 44ch;
+  margin: 0 auto 2rem;
+}
+
+/* ============================================================
+   Tablet
+   ============================================================ */
+@media (min-width: 768px) {
+  .mem-container,
+  .mem-hero-inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .mem-hero-inner {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+  .mem-hero-cta {
+    flex-direction: row;
+  }
+
+  .mem-intro,
+  .mem-groups,
+  .mem-fineprint {
+    padding: 6rem 0;
+  }
+  .mem-tiers {
+    padding: 5rem 0;
+  }
+
+  .mem-tier-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .mem-weekend-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .mem-weekend-media {
+    min-height: 100%;
+  }
+  .mem-weekend-content {
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .mem-group-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mem-closing-inner {
+    padding: 7rem 1.5rem;
+  }
+}
+
+/* ============================================================
+   Desktop
+   ============================================================ */
+@media (min-width: 1024px) {
+  .mem-tier-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

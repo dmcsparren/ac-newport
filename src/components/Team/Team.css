@@ -1,34 +1,105 @@
-.team-section {
-  padding: 3rem 2rem;
-  margin: 3rem 0;
-  background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
-  color: white;
+.team-intro-lede {
+  margin-top: 1.25rem;
+  font-size: 1.1rem;
 }
 
-.team-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
+/* Roster tiles */
+.team-roster {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
-
-.team-container {
-  max-width: 800px;
-  margin: 0 auto;
+.team-tile {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.team-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+.team-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(26, 40, 71, 0.12);
+}
+.team-tile-photo {
+  aspect-ratio: 3 / 4;
+  background-color: #dfe4ec;
+  overflow: hidden;
+}
+.team-tile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.team-tile-name {
+  display: block;
+  padding: 0.75rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy-blue);
   text-align: center;
-  color: white;
 }
 
-@media (max-width: 768px) {
-  .team-section {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
+@media (min-width: 600px) {
+  .team-roster {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
+}
+@media (min-width: 900px) {
+  .team-roster {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .team-roster {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 
-  .team-container h2 {
-    font-size: 2rem;
+.team-leader-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.team-leader-card {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-left: 3px solid var(--red-accent);
+  border-radius: 4px;
+  padding: 1.75rem 1.5rem;
+}
+.team-leader-role {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--red-accent);
+}
+.team-leader-name {
+  font-size: 1.5rem;
+  color: var(--navy-blue);
+  margin: 0.35rem 0 0.6rem;
+}
+.team-leader-bio {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.team-signup-lede {
+  color: var(--light-gray);
+  line-height: 1.6;
+  margin: 1rem 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .team-leader-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
   }
 }

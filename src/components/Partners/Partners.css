@@ -1,34 +1,23 @@
-.partners-section {
-  padding: 3rem 2rem;
-  margin: 3rem 0;
-  background: linear-gradient(135deg, var(--navy-blue) 0%, #2d3e5f 100%);
-  color: white;
-}
-
-.partners-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.partners-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.partners-container h2 {
-  font-size: 2.5rem;
+.partners-roster-title {
   margin-bottom: 2rem;
-  text-align: center;
-  color: white;
 }
-
-@media (max-width: 768px) {
-  .partners-section {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
-  }
-
-  .partners-container h2 {
-    font-size: 2rem;
-  }
+.partners-logos {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.partners-supporters-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #6b7488;
+  text-align: center;
+  margin: 2.5rem 0 1.25rem;
+}
+.partners-chips {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.partners-signup-form {
+  margin-top: 2.5rem;
 }
