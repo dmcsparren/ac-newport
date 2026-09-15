@@ -3,6 +3,26 @@ import PhotoBand from '../PhotoBand/PhotoBand'
 import MailingListForm from '../MailingListForm/MailingListForm'
 import './Team.css'
 
+const roster = [
+  'Aris Taki',
+  'Carl Toulou',
+  'Carter Robbins',
+  'Chris Mencos',
+  'Dan Goba',
+  'Evan Conceicao',
+  'Horace Avila',
+  'JT Newbury',
+  'Jack Clarke',
+  'Jack Krikorian',
+  'Jackoby Pelland',
+  'JeanLuca Frenzilli',
+  'Justin Talbot',
+  'Kaisei Korytoski',
+  'Moises Morales',
+  'Niko Alberga',
+  'TJ Levisee',
+]
+
 const leadership = [
   {
     name: 'Ziggy Korytoski',
@@ -25,19 +45,43 @@ const Team = () => {
 
       <section className="section">
         <div className="container measure section-head--center">
-          <p className="eyebrow eyebrow--center">2027 Season</p>
+          <p className="eyebrow eyebrow--center">2026 Squad</p>
           <h2 className="display-title section-title">
-            The squad is <em>taking shape.</em>
+            Meet the players <em>carrying the crest.</em>
           </h2>
           <p className="lede team-intro-lede">
-            Player announcements roll out ahead of kickoff. Join the mailing list
-            to be first to meet the group that will represent the island this
-            season — and follow the club as the roster is confirmed.
+            The group representing Aquidneck Island this season — trained on the
+            island, competing in the National Premier Soccer League.
           </p>
         </div>
       </section>
 
       <section className="section section--tint">
+        <div className="container">
+          <header className="section-head">
+            <p className="eyebrow">The Squad</p>
+            <h2 className="display-title section-title">
+              First team, <em>2026.</em>
+            </h2>
+          </header>
+          <ul className="team-roster">
+            {roster.map((name) => (
+              <li key={name} className="team-tile">
+                <div className="team-tile-photo">
+                  <img
+                    src={`/images/headshots/${encodeURIComponent(name)}.jpg`}
+                    alt={name}
+                    loading="lazy"
+                  />
+                </div>
+                <span className="team-tile-name">{name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <header className="section-head">
             <p className="eyebrow">Leadership</p>

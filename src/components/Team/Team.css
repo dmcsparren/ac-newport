@@ -3,6 +3,64 @@
   font-size: 1.1rem;
 }
 
+/* Roster tiles */
+.team-roster {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.team-tile {
+  background-color: var(--white);
+  border: 1px solid #e2e6ee;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.team-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(26, 40, 71, 0.12);
+}
+.team-tile-photo {
+  aspect-ratio: 3 / 4;
+  background-color: #dfe4ec;
+  overflow: hidden;
+}
+.team-tile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.team-tile-name {
+  display: block;
+  padding: 0.75rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy-blue);
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .team-roster {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 900px) {
+  .team-roster {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .team-roster {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 .team-leader-grid {
   display: grid;
   gap: 1.25rem;
