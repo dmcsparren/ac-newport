@@ -10,8 +10,8 @@ const Hero = () => {
       <div className="hero-inner">
         <p className="eyebrow eyebrow--light">Newport · Rhode Island — Est. MMXXVI</p>
         <h1 className="display-title display-title--light hero-title">
-          Newport has a
-          <em>football club.</em>
+          A Season on
+          <em>Aquidneck Island</em>
         </h1>
         <p className="hero-lede">
           Aquidneck Island's own competitive club, bringing first-rate football to
