@@ -9,9 +9,9 @@
   --light-gray: #f5f5f5;
   --ink-muted: #4a556b; /* muted body copy on light backgrounds */
 
-  /* Typography — headings and body share one family */
-  --font-body: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --font-display: var(--font-body);
+  /* Typography — matches acn.pplx.app: Instrument Serif display, Switzer body */
+  --font-body: 'Switzer', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
   font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
@@ -41,8 +41,8 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: normal;
 }
 
 h1 {
@@ -102,15 +102,15 @@ h3 {
 /* Display headline with an italic red accent line */
 .display-title {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.05;
-  letter-spacing: -0.015em;
+  letter-spacing: normal;
   color: var(--navy-blue);
 }
 .display-title em {
   display: block;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--red-accent);
 }
 .display-title--light {
