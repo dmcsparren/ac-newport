@@ -108,7 +108,7 @@ const Memberships = () => {
             Leave your details and we'll be in touch the moment 2027 season tickets
             and membership go live.
           </p>
-          <MailingListForm id="memberships" />
+          <MailingListForm id="memberships-waitlist" />
         </div>
       </section>
     </div>

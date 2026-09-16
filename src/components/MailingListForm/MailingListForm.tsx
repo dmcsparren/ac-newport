@@ -45,10 +45,17 @@ const MailingListForm = ({ id }: MailingListFormProps) => {
         }),
       })
 
-      const data = await response.json()
+      // Guard against non-JSON responses (e.g. a gateway/HTML error page) so
+      // the user sees a friendly message instead of a raw JSON parse error.
+      let data: { error?: string } | null = null
+      try {
+        data = await response.json()
+      } catch {
+        data = null
+      }
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to subscribe')
+        throw new Error(data?.error || 'Something went wrong. Please try again later.')
       }
 
       setSubmitted(true)

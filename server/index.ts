@@ -169,6 +169,18 @@ app.post('/api/subscribe', async (req, res) => {
 
     console.log('Successfully inserted subscriber:', result.rows[0])
 
+    // Mirror the submission to the Google Sheet, tagged with the page/form it
+    // came from (source). Fire-and-forget — never blocks the response.
+    syncToGoogleSheet({
+      type: 'mailing_list',
+      firstName,
+      lastName,
+      email,
+      phone: phone || undefined,
+      source: source || 'unknown',
+      createdAt: result.rows[0].created_at
+    })
+
     res.status(201).json({
       message: 'Successfully subscribed to mailing list',
       data: result.rows[0]

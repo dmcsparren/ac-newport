@@ -101,8 +101,23 @@ function doPost(e) {
     }
 
     if (data.type === 'mailing_list') {
-      // Mailing list sync — add a "Mailing List" tab when ready
-      return ContentService.createTextOutput(JSON.stringify({ status: 'ok', message: 'mailing_list skipped' }))
+      // Append to a dedicated "Mailing List" tab, creating it (with a header
+      // row) the first time. The Source column records which page/form the
+      // submission came from (e.g. home, memberships-waitlist, contact).
+      var mlSheet = ss.getSheetByName('Mailing List');
+      if (!mlSheet) {
+        mlSheet = ss.insertSheet('Mailing List');
+        mlSheet.appendRow(['Created At', 'First Name', 'Last Name', 'Email', 'Phone', 'Source']);
+      }
+      mlSheet.appendRow([
+        data.createdAt || new Date().toISOString(), // A: created_at
+        data.firstName,                             // B: first_name
+        data.lastName,                              // C: last_name
+        data.email,                                 // D: email
+        data.phone || '',                           // E: phone
+        data.source || 'unknown'                    // F: source (which page/form)
+      ]);
+      return ContentService.createTextOutput(JSON.stringify({ status: 'ok', sheet: 'mailing_list', source: data.source || 'unknown' }))
         .setMimeType(ContentService.MimeType.JSON);
     }
 
